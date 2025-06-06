@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    background-color:#1a1e34 ;
+    
+} 
+
+.container {
+ margin: 0;
+ padding: 0;
+}
+
+.login {
+    margin-top: 7rem;
+    font-size: 125%;
+    margin-left: 3rem;
+    color: white;
+}
+
+.email {
+    margin: 1rem 3rem ;
+    color:white;
+} 
+
+.senha {
+    margin: 1rem 3rem ;
+    color:white ;
+    padding-top: 1rem;
+}
+
+.caixa{
+    display: flex;
+    height: 40px;
+    margin-left: 3rem;
+    margin-right: 3rem ;
+}
+
+.caixa input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: white;
+    outline: none;
+    color: white;
+    padding: 5px 20px 5px 20px;
+}
+
+.lembrar {
+    display: flex;
+    color: white;
+    font-size: small;
+    margin-top: 2rem;
+    justify-content: space-around;
+    
+    
+}
+
+
+.esqueci {
+    margin-left: 2rem;
+    font-size: small;
+    
+    
+}
+
+.esqueci a{
+    text-decoration: none;
+    color: #6ce5e8;
+    
+}
+
+a ::after{
+    color: #6ce5e8;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+    align-items:baseline;
+}
