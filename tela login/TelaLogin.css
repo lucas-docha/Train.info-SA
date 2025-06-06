@@ -7,9 +7,12 @@
     font-optical-sizing: auto;
 
     font-style: normal;
-    background-color:#1a1e34 ;
     
 } 
+
+body {
+    background-color:#1a1e34;
+}
 
 .container {
  margin: 0;
@@ -59,8 +62,6 @@
     font-size: small;
     margin-top: 2rem;
     justify-content: space-around;
-    
-    
 }
 
 
@@ -85,4 +86,63 @@ a ::after{
 .flex {
     display: flex;
     align-items:baseline;
+}
+
+.facebook {
+    padding: 5px;
+    align-items: center;
+}
+
+.facebook p {
+    padding-left: 5px;
+    font-size: larger;
+}
+
+.facebook img {
+    padding-top: 10px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.facebook button {
+    display: flex; 
+    width: auto; 
+    height: auto; 
+    background-color: #2e3356; 
+    border-radius: 20px; 
+    border-style: none;
+    padding: 10px;
+}
+
+.google {
+    padding: 5px;
+    align-items: center;
+}
+
+.google p {
+    padding-left: 5px;
+    font-size: larger;
+}
+
+.google img {
+    padding-top: 10px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.google button {
+    display: flex; 
+    width: auto; 
+    height: auto; 
+    background-color: #2e3356; 
+    border-radius: 20px; 
+    border-style: none;
+    padding: 10px 20px;
+}
+
+.logar {
+    display: flex;
+    justify-content: space-around;
 }
