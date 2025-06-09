@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+    
+} 
+
+body {
+    background-color:#1a1e34;
+}
+
+.container {
+ margin: 0;
+ padding: 0;
+}
+
+.esqueci {
+    margin-top: 10rem;
+    font-size: 125%;
+    margin-left: 3rem;
+    color: white;
+}
+
+.email {
+    margin: 1rem 3rem ;
+    color:white;
+} 
+
+.caixa{
+    display: flex;
+    height: 40px;
+    margin-left: 3rem;
+    margin-right: 3rem ;
+}
+
+.caixa input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: white;
+    outline: none;
+    color: white;
+    padding: 5px 20px 5px 20px;
+}
+
+
+
+
+

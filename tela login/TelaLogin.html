@@ -15,16 +15,19 @@
         </div>
         <div class="info">
             <div class="email">
-                <p>Email</p>
+                <form action="/login" method="post">
+                    <label for="email">Email</label>
             </div>
+
             <div class="caixa">
-                <input placeholder="Insira seu email aqui!" type="email">
+                <input type="email" id="email" name="email" placeholder="Insira o seu email aqui!" required>
             </div>
             <div class="senha">
-                <p>Senha</p>
+                <label for="password">Senha</label>
+                
             </div>
             <div class="caixa">
-                <input placeholder="Insira sua senha aqui!" type="email">
+                <input type="password" id="password" name="password" placeholder="Insira sua senha aqui!" required>
             </div>
         </div>
         <div class="lembrar">
@@ -33,7 +36,9 @@
                 Lembre de mim
             </label>
             <div class="esqueci">
-                <a href="#">Esqueceu a senha?</a>
+                <button onclick="EsqueciSenha()">
+                    <p>Esqueceu a senha?</p>
+                </button>
             </div>
         </div>
         <div class="botão" style="padding-top: 2rem; padding-left: 3rem; padding-right: 2.5rem;">

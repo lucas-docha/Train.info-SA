@@ -62,21 +62,28 @@ body {
     font-size: small;
     margin-top: 2rem;
     justify-content: space-around;
+    align-items: baseline;
 }
 
 
-.esqueci {
+.esqueci p {
     margin-left: 2rem;
     font-size: small;
-    
-    
+    background-color: #1a1e34;
+    color:white;
+    text-decoration: none; 
 }
 
-.esqueci a{
-    text-decoration: none;
-    color: #6ce5e8;
-    
+.esqueci button {
+    display: flex; 
+    width: auto; 
+    height: auto; 
+    background-color: #1a1e34; 
+    border-radius: 20px; 
+    border-style: none;
 }
+
+
 
 a ::after{
     color: #6ce5e8;

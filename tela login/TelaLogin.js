@@ -5,3 +5,7 @@
 function facebooklogin() {
             window.open("https://pt-br.facebook.com/login/device-based/regular/login/", "_blank");
         }
+
+function EsqueciSenha() {
+            window.open("./TelaEsqueci.html");
+        }
