@@ -19,10 +19,11 @@ body {
 h1 {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
-    font-size: 40px;
+    font-size: 30px;
     font-style: normal;
     color: #f3f5f8;
     font-weight: bolder;
+    padding: 5px 0 0 10px;
 }
 
 /*título de hyperlink*/
@@ -66,4 +67,3 @@ form ::placeholder{
     border-radius: 5px;
     background-color: #2e3356;
 }
-
