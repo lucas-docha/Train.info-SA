@@ -9,3 +9,7 @@ function facebooklogin() {
 function EsqueciSenha() {
             window.open("./TelaEsqueci.html");
         }
+
+function paginaPrincipal() {
+            window.open("../Tela principal/TelaPrincipal.html");
+}
