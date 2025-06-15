@@ -2,21 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 
 * {
-    
+
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
 
     font-style: normal;
-    
-} 
+
+}
 
 body {
-    background-color:#1a1e34;
+    background-color: #1a1e34;
 }
 
 .container {
- margin: 0;
- padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .login {
@@ -27,24 +27,24 @@ body {
 }
 
 .email {
-    margin: 1rem 3rem ;
-    color:white;
-} 
+    margin: 1rem 3rem;
+    color: white;
+}
 
 .senha {
-    margin: 1rem 3rem ;
-    color:white ;
+    margin: 1rem 3rem;
+    color: white;
     padding-top: 1rem;
 }
 
-.caixa{
+.caixa {
     display: flex;
     height: 40px;
     margin-left: 3rem;
-    margin-right: 3rem ;
+    margin-right: 3rem;
 }
 
-.caixa input{
+.caixa input {
     width: 100%;
     height: 100%;
     background-color: transparent;
@@ -65,34 +65,42 @@ body {
     align-items: baseline;
 }
 
+.botao-entrar {
+    color: white;
+    background-color: #41b8d5;
+    border-radius: 15px;
+    width: 100%;
+    height: 3rem;
+    border-style: none;
+}
 
 .esqueci p {
     margin-left: 2rem;
     font-size: small;
     background-color: #1a1e34;
-    color:white;
-    text-decoration: none; 
+    color: #6ce5e8;
+    text-decoration: none;
 }
 
 .esqueci button {
-    display: flex; 
-    width: auto; 
-    height: auto; 
-    background-color: #1a1e34; 
-    border-radius: 20px; 
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #1a1e34;
+    border-radius: 20px;
     border-style: none;
 }
 
 
 
-a ::after{
+a ::after {
     color: #6ce5e8;
     text-decoration: none;
 }
 
 .flex {
     display: flex;
-    align-items:baseline;
+    align-items: baseline;
 }
 
 .facebook {
@@ -113,11 +121,11 @@ a ::after{
 }
 
 .facebook button {
-    display: flex; 
-    width: auto; 
-    height: auto; 
-    background-color: #2e3356; 
-    border-radius: 20px; 
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #2e3356;
+    border-radius: 20px;
     border-style: none;
     padding: 10px;
 }
@@ -140,11 +148,11 @@ a ::after{
 }
 
 .google button {
-    display: flex; 
-    width: auto; 
-    height: auto; 
-    background-color: #2e3356; 
-    border-radius: 20px; 
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #2e3356;
+    border-radius: 20px;
     border-style: none;
     padding: 10px 20px;
 }
@@ -152,4 +160,51 @@ a ::after{
 .logar {
     display: flex;
     justify-content: space-around;
+}
+
+@media (min-width: 999px) {
+    #login {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        margin-top: 4rem;
+        padding-bottom: 5rem;
+        background-color: #131630;
+        border: 5px solid;
+        border-color: #131630;
+        border-radius: 8px;
+        width: 500px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .botao-entrar {
+        background-color: #41b8d5;
+        transition: background-color 0.3s;
+        color: white;
+        border-radius: 15px;
+        width: 100%;
+        height: 3rem;
+        border-style: none;
+    }
+
+    .botao-entrar:hover {
+        background-color:#3694b9;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .esqueci button {
+        background-color: #131630;
+    }
+
+    .esqueci p {
+        background-color: #131630;
+    }
+
+
+
 }

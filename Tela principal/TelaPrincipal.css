@@ -6,11 +6,22 @@
     
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-
+    
     font-style: normal;
 }
 
+html {
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1b203e;
+}
+
 body {
+    padding: 100px 0 0 0;
+    background-color: #1b203e;
+    height: 100%;
+    margin: 0;
     background-color: #1b203e;
 }
 
@@ -46,11 +57,17 @@ h3 {
     
 }
 
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .flex {
     display: flex;
 }
 
 .container-fluid {
+    margin: 0;
     padding: 1rem;
 }
 
@@ -64,17 +81,21 @@ form ::placeholder{
 
 .conteudo {
     margin: 1rem;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     background-color: #2e3356;
     justify-content: space-around;
+    gap: 1rem;
 }
 
 .info{
-    border-radius: 5px;
     background-color: #1b203e;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 5px;
+    
+    justify-content: space-around;
+
+    gap: 1rem;
+    
 }
 
 .conteudo p{
@@ -87,4 +108,52 @@ form ::placeholder{
 }
 main h3{
     margin-bottom: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+.conteiner {
+    margin: 0;
+}
+
+.grafico {
+    height: 100px;    
+}
+
+#trens-ativos {
+    width: 100%;
+    height: 100px; /* altura fixa */
+    max-width: 300px;
+  }
+
+@media (min-width: 999px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    .offcanvas {
+        display: none !important;
+    }
+
+    .conteiner{
+        margin: 0 10rem !important;
+   }
+
+   .container-fluid {
+     margin: 0 2rem;
+   }
+   
+}
+
+@media (min-width: 700px) {
+    .conteiner{
+        margin: 0 5rem;
+   }
 }
