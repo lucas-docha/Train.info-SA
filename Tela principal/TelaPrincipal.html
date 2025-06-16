@@ -143,16 +143,17 @@
                 </div>
                 <div class="conteudo flex-wrap">
                     <div class="info flex-wrap">
-                        <div class="subtitulo">
+                        <!-- informações trens ativos -->
+                        <div class="ativos">
                             <p><strong>Trens ativos</strong></p>
                             <p>Transporte:</p>
-                            <div flex>
+                            <div class="flex">
 
                                 <p id="transporte"></p>
                             </div>
 
                             <p>Carga:</p>
-                            <div flex>
+                            <div class="flex">
                                 <p id="carga"></p>
                             </div>
                         </div>
@@ -161,25 +162,73 @@
                         </div>
                     </div>
 
+                    <!-- informações status -->
                     <div class="info flex-wrap">
                         <div class="status">
                             <p><strong>Status</strong></p>
+                            <p>Funcionando:</p>
+                            <div class="flex">
+                                <p id="funcionando"></p>
+                            </div>
+
+                            <a href="#monitoramento" style="text-decoration: none;">
+                                <p>Em manutenção:</p>
+                            </a>
+                            <div class="flex">
+                                <p id="manutencao"></p>
+                            </div>
 
                         </div>
                         <div class="grafico">
-                            <canvas id="trens-ativos2"></canvas>
+                            <canvas id="status"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="conteudo">
-                    <h3>Horários</h3>
-                    <div class="info">
-                        <p>tabela - tempo de viagem</p>
-                    </div>
-                    <div class="info">
-                        <p>tabela de trens em atraso</p>
-                    </div>
 
+                <!--tabela de horarios-->
+                <div class="conteudo horario flex">
+                    <h3>Horários</h3>
+                    <div class="info flex gap-0">
+                        <div class="tabela">
+                            <div class="cabecalho">
+
+                                <div class="numeroTrem">
+                                    <div class="borda">
+                                        <p>n°trem</p>
+                                    </div>
+                                    <div class="borda">
+                                        <p>teste</p>
+                                    </div>
+                                </div>
+
+                                <div class="saida">
+                                    <div class="borda">
+                                        <p>saída</p>
+                                    </div>
+                                    <div class="borda">
+                                        <p>teste</p>
+                                    </div>
+                                </div>
+
+                                <div class="chegada">
+                                    <div class="borda">
+                                        <p>chegada</p>
+                                    </div>
+                                    <div class="borda">
+                                        <p>teste</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="info ">
+                            <p>tabela de trens em atraso</p>
+
+
+
+                        </div>
+                    </div>
                 </div>
                 <div class="conteudo">
                     <h3>Alertas</h3>

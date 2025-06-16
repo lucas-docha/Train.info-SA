@@ -39,16 +39,21 @@ window.onload = function () {
 // status
 
     // dados
-    
+    const funcionando = 318;
+    const manutencao = 12;
 
-    const Status = document.getElementById('trens-ativos2');
+    // html
+    document.getElementById("funcionando").innerText = `${funcionando}`
+    document.getElementById("manutencao").innerText = `${manutencao}`
+    // grafico
+    const Status = document.getElementById('status');
 
     new Chart(Status, {
         type: 'pie',
         data: {
-            labels: ['Trasnporte', 'Carga'],
+            labels: ['Funcionando', 'Em manutenção'],
             datasets: [{
-                data: [14, 86],
+                data: [funcionando, manutencao],
                 borderColor: '#2e3356',
                 borderWidth: 1,
                 backgroundColor: [
