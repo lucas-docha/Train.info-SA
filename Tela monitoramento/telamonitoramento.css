@@ -66,6 +66,21 @@ form ::placeholder{
     padding: 1rem;
     border-radius: 5px;
     background-color: #2e3356;
+}
+
+.conteudo2 {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #2e3356;
+    
+}
+
+.conteudo3 {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #2e3356;
     
 }
 
@@ -127,10 +142,8 @@ p {
     border-radius: 20px;
     max-width: auto;
     display: flex;
-    padding: 0 1rem;
-    justify-content: space-between;
-    display: block;
-    position: relative;
+    justify-content: space-around;
+
 }
 
 .teste2 {
@@ -158,4 +171,12 @@ span {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     
-}  
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
