@@ -1,10 +1,10 @@
 // dados
-const funcionando = 318;
-const manutencao = 12;
+const funcionando = 4055;
+const manutencao = 758;
 
 // html
-document.getElementById("funcionando").innerText = ${ funcionando }
-document.getElementById("manutencao").innerText = ${ manutencao }
+document.getElementById("funcionando").innerText = `${funcionando}`
+document.getElementById("manutencao").innerText = `${manutencao}`
 
 // grafico
 const Status = document.getElementById('status');
@@ -32,3 +32,4 @@ new Chart(Status, {
         }
     }
 });
+

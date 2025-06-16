@@ -6,11 +6,22 @@
     
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-
+    
     font-style: normal;
 }
 
+html {
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1b203e;
+}
+
 body {
+    padding: 100px 0 0 0;
+    background-color: #1b203e;
+    height: 100%;
+    margin: 0;
     background-color: #1b203e;
 }
 
@@ -19,10 +30,11 @@ body {
 h1 {
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
-    font-size: 40px;
+    font-size: 30px;
     font-style: normal;
     color: #f3f5f8;
     font-weight: bolder;
+    padding: 5px 0 0 10px;
 }
 
 /*título de hyperlink*/
@@ -38,18 +50,24 @@ h2 {
 h3 {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-size: 30px;
+    font-size: 15px;
     font-style: normal;
     color: #f3f5f8;
-    font-weight:normal; 
+    font-weight:bold; 
+    
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .flex {
     display: flex;
-    gap: 20px;
 }
 
 .container-fluid {
+    margin: 0;
     padding: 1rem;
 }
 
@@ -63,114 +81,39 @@ form ::placeholder{
 
 .conteudo {
     margin: 1rem;
-    padding: 1rem;
+    padding: 5px;
     border-radius: 5px;
     background-color: #2e3356;
+    justify-content: space-around;
+    gap: 1rem;
+   
 }
 
-.conteudo2 {
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #2e3356;
+.horario {
+    display: flex;
+    flex-direction: column;
+}
+
+.info{
+    background-color: #1b203e;
+    padding: 5px;
     
-}
-
-.conteudo3 {
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #2e3356;
-    
-}
-
-.caixa {
-    display: flex;
-    background-color: #1b203e !important; 
-    border-radius: 8px;
-    height: 50%;
-    margin: 1rem;
-}
-
-.caixa2 {
-    display: flex;
-    /* background-color: #1b203e !important;  */
-    border-radius: 8px;
-    gap: 20px;
-    height: 50%;
-    margin: 1rem;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-p {
-    font-size: 20px;
-    color: white;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    padding-left:15%;
-}
-
-.caixa svg{
-    position: absolute;
-    left: 4rem;
-    transform: translatey(-48%);
-}
-
-.teste1 p {
-    font-size: 50%;
-    color: white;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    padding-right: 65% ;
-}
-.teste2 p {
-   font-size: 50%;
-    color: greenyellow;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    padding-left:15%; 
-}
-
-.teste1 {
-    background-color: #1b203e !important;
-    width: 50%;
-    margin: auto;
-    border-radius: 20px;
-    max-width: auto;
-    display: flex;
     justify-content: space-around;
 
-}
-
-.teste2 {
-    width: 35%;
-    margin: auto;
-    background-color:#1b203e;
-    border-radius: 20px;
-    position: relative;
-}
-
-.titulo h3 {
-    display: flex;
-    border-radius: 8px;
-    gap: 20px;
-    justify-content: space-around;
-    padding-right: 83%;
-    font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-}
-
-span {
-    font-size: 75%;
-    color: white;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+    gap: 2rem;
     
+}
+
+.conteudo p{
+    color: white;
+    font-size: 12px;
+}
+
+ main p{
+    margin-bottom: 0;
+}
+main h3{
+    margin-bottom: 0;
 }
 
 .navbar {
@@ -179,4 +122,96 @@ span {
     left: 0;
     width: 100%;
     z-index: 9999;
+}
+
+
+.conteiner {
+    margin: 0;
+}
+
+.grafico {
+    height: 100px;    
+}
+
+#trens-ativos {
+    width: 100%;
+    height: 100px;
+    max-width: 300px;
+  }
+
+.subtitulo {
+    justify-content: space-around;
+}
+
+@media (min-width: 999px) {
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    .offcanvas {
+        display: none !important;
+    }
+
+    .conteiner{
+        margin: 0 10rem !important;
+   }
+
+   .container-fluid {
+     margin: 0 2rem;
+   }
+   
+}
+
+@media (min-width: 700px) {
+    .conteiner{
+        margin: 0 5rem;
+   }
+}
+
+.tabela  {
+    width: 50%;
+    padding: 5px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-around;
+}
+
+.numeroTrem,
+.saida,
+.chegada {
+    flex: 1; /* Faz cada div crescer igualmente */
+}
+
+.numeroTrem {
+    display: flex;
+    flex-direction: column; /* ou row, depende do que você quer */
+}
+
+.borda {
+    border: 2px solid white;
+    padding: 2px;
+    text-align: center;
+}
+.search-input {
+    border-radius: 2rem;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    height: 30px;
+    max-width: 100%;
+}
+
+.coluna1, .coluna2, .coluna3 {
+    color: white;
+}
+
+tbody td:nth-child(1),
+tbody td:nth-child(2) {
+        color: white;
+}
+
+table {
+    margin-left: 10%;
 }
