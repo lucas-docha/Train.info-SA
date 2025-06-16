@@ -97,7 +97,7 @@ p {
     padding-left:15%;
 }
 
-.caixa svg {
+.caixa svg{
     position: absolute;
     left: 4rem;
     transform: translatey(-48%);

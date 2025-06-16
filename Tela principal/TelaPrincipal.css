@@ -94,7 +94,7 @@ form ::placeholder{
     
     justify-content: space-around;
 
-    gap: 1rem;
+    gap: 2rem;
     
 }
 
@@ -132,6 +132,10 @@ main h3{
     height: 100px; /* altura fixa */
     max-width: 300px;
   }
+
+.subtitulo {
+    justify-content: space-around;
+}
 
 @media (min-width: 999px) {
     .navbar-toggler {

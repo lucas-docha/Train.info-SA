@@ -1,12 +1,23 @@
 window.onload = function () {
-    const grfcAtv = document.getElementById('trens-ativos');
+// trens ativos
 
-    new Chart(grfcAtv, {
+    // dados
+    const trans = 262;
+    const carga = 68;
+
+    // mostrar no html
+    document.getElementById("transporte").innerText = `${trans}`
+    document.getElementById("carga").innerText = `${carga}`
+
+    //grafico
+    const Ativos = document.getElementById('trens-ativos');
+
+    new Chart(Ativos, {
         type: 'pie',
         data: {
-            labels: ['Trasnporte', 'Carga'],
+            labels: ['Transporte', 'Carga'],
             datasets: [{
-                data: [14, 86],
+                data: [trans, carga],
                 borderColor: '#2e3356',
                 borderWidth: 1,
                 backgroundColor: [
@@ -25,9 +36,14 @@ window.onload = function () {
         }
     });
 
-    const grfcAtv2 = document.getElementById('trens-ativos2');
+// status
 
-    new Chart(grfcAtv2, {
+    // dados
+    
+
+    const Status = document.getElementById('trens-ativos2');
+
+    new Chart(Status, {
         type: 'pie',
         data: {
             labels: ['Trasnporte', 'Carga'],
