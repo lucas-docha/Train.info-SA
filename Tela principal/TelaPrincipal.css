@@ -66,6 +66,11 @@ h3 {
     display: flex;
 }
 
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
 .container-fluid {
     margin: 0;
     padding: 1rem;
@@ -168,30 +173,19 @@ main h3{
    }
 }
 
-.tabela  {
-    width: 50%;
-    padding: 5px;
+table.table-striped-columns th,
+table.table-striped-columns td {
+    background-color: transparent !important;
+    color: #f3f5f8;
 }
 
-.cabecalho {
-    display: flex;
-    justify-content: space-around;
+.metade {
+    width: 40%;
 }
 
-.numeroTrem,
-.saida,
-.chegada {
-    flex: 1; /* Faz cada div crescer igualmente */
+.alertas{
+    background-color: #1b203e;
+    padding: 2rem;
+    margin: 1rem 3rem;
+    border-radius: 1rem;
 }
-
-.numeroTrem {
-    display: flex;
-    flex-direction: column; /* ou row, depende do que você quer */
-}
-
-.borda {
-    border: 2px solid white;
-    padding: 2px;
-    text-align: center;
-}
-

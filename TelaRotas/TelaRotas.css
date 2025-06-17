@@ -46,7 +46,11 @@ h3 {
 
 .flex {
     display: flex;
-    gap: 20px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .container-fluid {
@@ -66,96 +70,48 @@ form ::placeholder{
     padding: 1rem;
     border-radius: 5px;
     background-color: #2e3356;
+    gap: 1rem;
+    flex-direction: column;
     
 }
 
 .caixa {
     display: flex;
+    padding: 1rem;
     background-color: #1b203e !important; 
-    border-radius: 8px;
-    height: 50%;
-    margin: 1rem;
-}
-
-.caixa2 {
-    display: flex;
-    /* background-color: #1b203e !important;  */
-    border-radius: 8px;
-    gap: 20px;
-    height: 50%;
-    margin: 1rem;
-    align-items: center;
-    justify-content: flex-start;
+    border-radius: 1rem;
+    gap: 2rem;
+    font-size: smaller;
 }
 
 p {
-    font-size: 20px;
+    margin: 0;
     color: white;
-    margin: 0.5rem;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
-    padding-left:15%;
 }
 
-.caixa svg{
-    position: absolute;
-    left: 4rem;
-    transform: translatey(-48%);
-}
-
-.teste1 p {
-    font-size: 50%;
-    color: white;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    padding-right: 65% ;
-}
-.teste2 p {
-   font-size: 50%;
-    color: greenyellow;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
-    padding-left:15%; 
-}
-
-.teste1 {
-    background-color: #1b203e !important;
-    width: 50%;
-    margin: auto;
-    border-radius: 20px;
-    max-width: auto;
-    display: flex;
-    padding: 0 1rem;
-    justify-content: space-between;
-    display: block;
-    position: relative;
-}
-
-.teste2 {
-    width: 35%;
-    margin: auto;
-    background-color:#1b203e;
-    border-radius: 20px;
-    position: relative;
-}
-
-.titulo h3 {
-    display: flex;
-    border-radius: 8px;
-    gap: 20px;
-    justify-content: space-around;
-    padding-right: 83%;
-    font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-}
-
-span {
-    font-size: 75%;
-    color: white;
-    margin: 0.5rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: bold;
+.info{
+    background-color: #1b203e;
+    padding: 5px;
     
-}  
+    justify-content: space-around;
+
+    gap: 2rem;
+    
+}
+
+/*rotas*/
+
+.rota, .status-geral{
+    background-color: #1b203e;
+    padding: 10px;
+    border-radius: 2rem;
+    justify-content: space-between;
+}
+
+.rota p{
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 8px;
+}

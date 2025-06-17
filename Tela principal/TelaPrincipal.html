@@ -141,8 +141,8 @@
 
 
                 </div>
-                <div class="conteudo flex-wrap">
-                    <div class="info flex-wrap">
+                <div class="conteudo flex-wrap p-4">
+                    <div class=" flex-wrap">
                         <!-- informações trens ativos -->
                         <div class="ativos">
                             <p><strong>Trens ativos</strong></p>
@@ -163,7 +163,7 @@
                     </div>
 
                     <!-- informações status -->
-                    <div class="info flex-wrap">
+                    <div class=" flex-wrap">
                         <div class="status">
                             <p><strong>Status</strong></p>
                             <p>Funcionando:</p>
@@ -186,44 +186,43 @@
                 </div>
 
                 <!--tabela de horarios-->
-                <div class="conteudo horario flex">
+                <div class="conteudo horario">
                     <h3>Horários</h3>
-                    <div class="info flex gap-0">
-                        <div class="tabela">
-                            <div class="cabecalho">
+                    <div class="flex justify-content-around">
 
-                                <div class="numeroTrem">
-                                    <div class="borda">
-                                        <p>n°trem</p>
-                                    </div>
-                                    <div class="borda">
-                                        <p>teste</p>
-                                    </div>
-                                </div>
+                        <table class="tabela-horarios table table-striped-columns metade">
+                            <thead>
+                                <tr>
+                                    <th scope="col">n° trem</th>
+                                    <th scope="col">saída</th>
+                                    <th scope="col">chegada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="flex flex-col align-items-start">
+                            <p><strong>Trens em atraso</strong></p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
 
-                                <div class="saida">
-                                    <div class="borda">
-                                        <p>saída</p>
-                                    </div>
-                                    <div class="borda">
-                                        <p>teste</p>
-                                    </div>
-                                </div>
-
-                                <div class="chegada">
-                                    <div class="borda">
-                                        <p>chegada</p>
-                                    </div>
-                                    <div class="borda">
-                                        <p>teste</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <br>
-                        <div class="info ">
-                            <p>tabela de trens em atraso</p>
 
 
 
@@ -232,11 +231,18 @@
                 </div>
                 <div class="conteudo">
                     <h3>Alertas</h3>
-                    <div class="info">
-                        <p>alertas editaveis</p>
+                    <div class="alertas flex align-items-center gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="auto" fill="white"
+                            class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+
+                        <p>Trilho fora de curso - Linha 0063</p>
                     </div>
                 </div>
             </div>
+
 
 
 
