@@ -1,5 +1,7 @@
 -- MySQL Workbench Forward Engineering
 
+create banco_sa
+
 use banco_SA;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;

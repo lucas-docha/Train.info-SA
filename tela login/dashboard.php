@@ -16,7 +16,7 @@ require_once 'config.php';
 try {
     $sql = "SELECT * FROM usuario WHERE id_usuario = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['id' => $usuario['id']]);
+    $stmt->execute(['id' => dadosUsuario('id')]);
     $dadosCompletos = $stmt->fetch();
 } catch(PDOException $e) {
     $dadosCompletos = null;

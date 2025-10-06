@@ -75,7 +75,7 @@ if (empty($erros)) {
         $resultado = $stmt->fetch();
         
         if ($resultado['total'] > 0) {
-            $erros[] = "Este email já está cadastrado";
+            $erros[] = "Este email já foi cadastrado";
         }
         
         // Verifica CPF
@@ -85,8 +85,19 @@ if (empty($erros)) {
         $resultado = $stmt->fetch();
         
         if ($resultado['total'] > 0) {
-            $erros[] = "Este CPF já está cadastrado";
+            $erros[] = "Este CPF já foi cadastrado";
         }
+
+        //VERIFICA NOME
+        $sql = "SELECT COUNT(*) as total FROM usuario WHERE nome_usuario = :nome";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['nome' => $nome]);
+        $resultado = $stmt->fetch();
+
+        if ($resultado['total'] > 0) {
+            $erros[] = "Este nome de usuário já foi cadastrado";
+        } 
+
         
     } catch(PDOException $e) {
         $erros[] = "Erro ao verificar dados: " . $e->getMessage();
