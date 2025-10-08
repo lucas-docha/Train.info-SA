@@ -19,19 +19,9 @@ function facebooklogin() {
     window.open("https://pt-br.facebook.com/login/device-based/regular/login/", "_blank");
 }
 
-/**
- * Redireciona para página de recuperação de senha
- * Agora usa o arquivo PHP criado
- */
 function EsqueciSenha() {
-    window.location.href = "./TelaEsqueci.php";
+    window.location.href = "../TelaEsqueci.html";
 }
-
-/**
- * REMOVIDA função paginaPrincipal()
- * O redirecionamento agora é feito pelo PHP após validar login
- * Isso é mais seguro pois valida no servidor antes de redirecionar
- */
 
 /**
  * VALIDAÇÕES ADICIONAIS DO FORMULÁRIO

@@ -178,7 +178,7 @@ try {
             <div class="card">
                 <h2>Menu Rápido</h2>
                 <div class="menu-rapido">
-                    <a href="../Tela principal/TelaPrincipal.html" class="btn-menu">Página Principal</a>
+                    <a href="../TelaPrincipal/TelaPrincipal.php" class="btn-menu">Página Principal</a>
                     <a href="logout.php" class="btn-menu">Sair</a>
                 </div>
             </div>
@@ -205,7 +205,7 @@ try {
 
         <!-- RODAPÉ -->
         <div style="text-align: center; margin-top: 50px; color: #6ce5e8; font-size: 12px;">
-            <p>© 2024 Sistema de Login</p>
+            <p>© 2025 Tran.info</p>
         </div>
     </div>
 

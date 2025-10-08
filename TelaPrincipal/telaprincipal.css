@@ -1,0 +1,466 @@
+/* ===================================
+   FONTES
+   =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+/* ===================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   =================================== */
+* {
+    margin: 0;
+    padding:0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1b203e;
+}
+
+body {
+    background-color: #1a1e34;
+}
+
+/* ===================================
+   CONTAINER PRINCIPAL
+   =================================== */
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================
+   ESTILOS DE LOGIN/REGISTRO
+   =================================== */
+.login {
+    margin-top: 7rem;
+    font-size: 125%;
+    margin-left: 3rem;
+    color: white;
+}
+
+.email {
+    margin: 1rem 3rem;
+    color: white;
+}
+
+.senha {
+    margin: 1rem 3rem;
+    color: white;
+    padding-top: 1rem;
+}
+
+.caixa {
+    display: flex;
+    height: 40px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.caixa input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 25px;
+    border-color: white;
+    outline: none;
+    color: white;
+    padding: 5px 20px 5px 20px;
+}
+
+/* ===================================
+   CHECKBOX E OPÇÕES DE LOGIN
+   =================================== */
+.lembrar {
+    display: flex;
+    color: white;
+    font-size: small;
+    margin-top: 2rem;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+/* ===================================
+   BOTÕES
+   =================================== */
+.botao-entrar {
+    color: white;
+    background-color: #41b8d5;
+    border-radius: 15px;
+    width: 100%;
+    height: 3rem;
+    border-style: none;
+}
+
+.botao-entrar:hover {
+    background-color: #3694b9;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Botões especiais */
+.botao,
+.botão {
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 2.5rem;
+}
+
+/* ===================================
+   LINKS E TEXTOS AUXILIARES
+   =================================== */
+.esqueci p {
+    margin-left: 2rem;
+    font-size: small;
+    background-color: #1a1e34;
+    color: #6ce5e8;
+    text-decoration: none;
+}
+
+.esqueci button {
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #1a1e34;
+    border-radius: 20px;
+    border-style: none;
+}
+
+a::after {
+    color: #6ce5e8;
+    text-decoration: none;
+}
+
+.criar-conta {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.criar-conta a,
+.voltar-login a {
+    color: #6ce5e8;
+    text-decoration: none;
+}
+
+.criar-conta a:hover,
+.voltar-login a:hover {
+    text-decoration: underline;
+}
+
+.voltar-login {
+    text-align: center;
+    margin-top: 20px;
+    color: #6ce5e8;
+    font-size: 14px;
+}
+
+/* ===================================
+   LOGIN SOCIAL
+   =================================== */
+.flex {
+    display: flex;
+    align-items: baseline;
+}
+
+.logar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.facebook,
+.google {
+    padding: 5px;
+    align-items: center;
+}
+
+.facebook p,
+.google p {
+    padding-left: 5px;
+    font-size: larger;
+    background-color: #2e3356;
+    color: white;
+}
+
+.facebook img,
+.google img {
+    padding-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.facebook button,
+.google button {
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #2e3356;
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+}
+
+.google button {
+    padding: 10px 20px;
+}
+
+/* Divisor "Ou entre com" */
+.flex hr {
+    width: 25%;
+    margin-top: 3rem;
+    color: #bec2d0;
+}
+
+.flex p {
+    color: white;
+}
+
+/* ===================================
+   MENSAGENS DE FEEDBACK
+   =================================== */
+.msg-erro,
+.erro-msg {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    margin: 10px 3rem;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.msg-sucesso {
+    background-color: #44ff44;
+    color: #1a1e34;
+    padding: 10px;
+    margin: 10px 3rem;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ===================================
+   CAMPOS DE REGISTRO
+   =================================== */
+.campos-duplos {
+    display: flex;
+    gap: 1rem;
+    margin: 0 3rem;
+}
+
+.campo-metade {
+    flex: 1;
+}
+
+.campo-metade > div:first-child {
+    color: white;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.campo-metade > div:last-child {
+    display: flex;
+    height: 40px;
+}
+
+.campo-metade input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    padding: 5px 20px;
+}
+
+/* ===================================
+   DASHBOARD STYLES
+   =================================== */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-dashboard {
+    background-color: #131630;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.welcome-msg {
+    color: white;
+    font-size: 24px;
+}
+
+.btn-logout {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    background-color: #cc0000;
+}
+
+/* ===================================
+   CARDS DO DASHBOARD
+   =================================== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #131630;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.card h2 {
+    color: #41b8d5;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    color: white;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.card .label {
+    color: #6ce5e8;
+    font-weight: bold;
+}
+
+/* Caixa de segurança dentro do card */
+.card > div[style*="background-color: #2e3356"] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2e3356;
+    border-radius: 5px;
+}
+
+/* ===================================
+   MENU RÁPIDO
+   =================================== */
+.menu-rapido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-menu {
+    background-color: #41b8d5;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-menu:hover {
+    background-color: #3694b9;
+}
+
+/* ===================================
+   RODAPÉ
+   =================================== */
+.dashboard-container > div:last-child {
+    text-align: center;
+    margin-top: 50px;
+    color: #6ce5e8;
+    font-size: 12px;
+}
+
+/* ===================================
+   MEDIA QUERIES - DESKTOP
+   =================================== */
+@media (min-width: 999px) {
+    #login {
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        margin-top: 4rem;
+        padding-bottom: 5rem;
+        background-color: #131630;
+        border: 5px solid;
+        border-color: #131630;
+        border-radius: 8px;
+        width: 500px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .botao-entrar {
+        background-color: #41b8d5;
+        transition: background-color 0.3s;
+        color: white;
+        border-radius: 15px;
+        width: 100%;
+        height: 3rem;
+        border-style: none;
+    }
+
+    .botao-entrar:hover {
+        background-color: #3694b9;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .esqueci button {
+        background-color: #131630;
+    }
+
+    .esqueci p {
+        background-color: #131630;
+    }
+}
+
+/* ===================================
+   UTILITÁRIOS ESPECÍFICOS
+   =================================== */
+/* Para textos de segurança no dashboard */
+p[style*="color: #6ce5e8"] {
+    color: #6ce5e8;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+p[style*="color: #bec2d0"] {
+    color: #bec2d0;
+    font-size: 11px;
+    margin: 3px 0;
+}
+
+/* Validação de senha - borda vermelha */
+input[type="password"][style*="borderColor: #ff4444"] {
+    border-color: #ff4444 !important;
+}
