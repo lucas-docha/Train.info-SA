@@ -148,6 +148,18 @@ main h3{
     justify-content: space-around;
 }
 
+.btn-menu {
+            background-color: #41b8d5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            width: 5rem;
+            text-align: center;
+        }
+
 @media (min-width: 999px) {
     .navbar-toggler {
         display: none !important;

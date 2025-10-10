@@ -1,3 +1,11 @@
+<?php
+
+require_once '../TelaLogin/config.php';
+$stmt = $pdo->query("SELECT * FROM usuario LIMIT 1");
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,7 +24,7 @@
     <header>
         <nav class="navbar navbar-dark" style="background-color: #131630;">
             <div class="container-fluid">
-                <div class="flex w-100">
+                <div class="flex w-100" style="align-items: center;">
                     <!-- Formulário de busca -->
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"
@@ -30,20 +38,20 @@
                     <div class="navbarPC">
                         <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../Tela principal/TelaPrincipal.html">Dashboard</a>
+                                <a class="nav-link text-white" href="">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../TelaRotas/TelaRotas.html">Rotas</a>
+                                <a class="nav-link text-white" href="#rotas">Rotas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../Tela monitoramento/telamonitoramento.html">Monitoramento</a>
+                                <a class="nav-link text-white" href="#monitoramento">Monitoramento</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link text-white" href="../TelaRelatório/relatorio.html">Relatórios</a>
+                                <a class="nav-link text-white" href="#relatorios">Relatórios</a>
                             </li>
-                            <br>
+                            
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../tela login/TelaLogin.html">Entrar</a>
+                                <a href="../TelaLogin/logout.php" class="btn-menu nav-link " style="">Sair</a>
                             </li>
                         </ul>
                     </div>
@@ -121,7 +129,7 @@
                             <br>
                             <li class="nav-item">
                                 <a class="nav-link" href="../tela login/TelaLogin.html">
-                                    <h2>Entrar</h2>
+                                    <h2>Olá, <?= htmlspecialchars($usuario['nome_usuario']) ?></h2>
                                 </a>
                             </li>
                         </ul>
