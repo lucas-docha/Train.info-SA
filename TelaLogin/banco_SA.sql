@@ -1,6 +1,6 @@
 -- MySQL Workbench Forward Engineering
 
-create banco_sa
+create database banco_SA;
 
 use banco_SA;
 
@@ -24,7 +24,7 @@ USE `banco_SA` ;
 CREATE TABLE IF NOT EXISTS `banco_SA`.`usuario` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `email_usuario` VARCHAR(45) NOT NULL,
-  `senha_usuario` VARCHAR(45) NOT NULL,
+  `senha_usuario` VARCHAR(255) NOT NULL,
   `cpf_usuario` CHAR(11) NOT NULL,
   `numerotele_usuario` VARCHAR(11) NULL,
   `nome_usuario` VARCHAR(45) NOT NULL,

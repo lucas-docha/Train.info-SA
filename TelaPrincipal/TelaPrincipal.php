@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="TelaPrincipal/telaprincipal.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <title>Tela principal</title>
+    <link rel="stylesheet" href="telaprincipal.css">
+
+    <title>Tela</title>
 </head>
+
 <body>
-   <header>
-        <nav class="navbar navbar-dark" style="background-color: #232744;">
+    <header>
+        <nav class="navbar navbar-dark" style="background-color: #131630;">
             <div class="container-fluid">
                 <div class="flex w-100">
                     <!-- Formulário de busca -->
@@ -26,20 +30,20 @@
                     <div class="navbarPC">
                         <ul class="navbar-nav flex-row gap-4 d-none d-lg-flex">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../TelaLogin/dashboard.php">Dashboard</a>
+                                <a class="nav-link text-white" href="../Tela principal/TelaPrincipal.html">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#rotas">Rotas</a>
+                                <a class="nav-link text-white" href="../TelaRotas/TelaRotas.html">Rotas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#monitoramento">Monitoramento</a>
+                                <a class="nav-link text-white" href="../Tela monitoramento/telamonitoramento.html">Monitoramento</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link text-white" href="#relatorios">Relatórios</a>
+                                <a class="nav-link text-white" href="../TelaRelatório/relatorio.html">Relatórios</a>
                             </li>
                             <br>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="../TelaLogin/TelaLogin.php">Entrar</a>
+                                <a class="nav-link text-white" href="../tela login/TelaLogin.html">Entrar</a>
                             </li>
                         </ul>
                     </div>
@@ -55,7 +59,7 @@
                 <!-- Menu lateral (offcanvas) -->
                 <div class="offcanvas offcanvas-end text-light w-40" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel"
-                    style="background-color: #2e3356; --bs-offcanvas-width: 80%;">
+                    style="background-color: #131630; --bs-offcanvas-width: 80%;">
                     <div class="offcanvas-header flex">
                         <img src="../imgens/train-logo.ico" width="70px">
                         <a class="nav-link active" aria-current="page" href="#">
@@ -69,7 +73,7 @@
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
                             <li class="nav-item align-items-center">
-                                <a class="nav-link flex col-5" href="../Tela principal/TelaPrincipal.html"><svg xmlns="http://www.w3.org/2000/svg"
+                                <a class="nav-link flex col-5" href="../TelaLogin/dashboard.php"><svg xmlns="http://www.w3.org/2000/svg"
                                         width="25" height="auto" fill="currentColor" class="bi bi-house-fill"
                                         viewBox="0 0 16 16">
                                         <path
@@ -129,11 +133,131 @@
 
     </header>
 
-   <main>
+    <main>
+        <section id="dashboard">
+            <div class="conteiner">
+                <div class="conteudo">
+                    <h3 class="p-1">Visão Geral</h3>
 
-   </main>
-   <footer>
 
-   </footer>
+                </div>
+                <div class="conteudo flex-wrap p-4">
+                    <div class=" flex-wrap">
+                        <!-- informações trens ativos -->
+                        <div class="ativos">
+                            <p><strong>Trens ativos</strong></p>
+                            <p>Transporte:</p>
+                            <div class="flex">
+
+                                <p id="transporte"></p>
+                            </div>
+
+                            <p>Carga:</p>
+                            <div class="flex">
+                                <p id="carga"></p>
+                            </div>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="trens-ativos"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- informações status -->
+                    <div class=" flex-wrap">
+                        <div class="status">
+                            <p><strong>Status</strong></p>
+                            <p>Funcionando:</p>
+                            <div class="flex">
+                                <p id="funcionando"></p>
+                            </div>
+
+                            <a href="#monitoramento" style="text-decoration: none;">
+                                <p>Em manutenção:</p>
+                            </a>
+                            <div class="flex">
+                                <p id="manutencao"></p>
+                            </div>
+
+                        </div>
+                        <div class="grafico">
+                            <canvas id="status"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!--tabela de horarios-->
+                <div class="conteudo horario">
+                    <h3>Horários</h3>
+                    <div class="flex justify-content-around">
+
+                        <table class="tabela-horarios table table-striped-columns metade">
+                            <thead>
+                                <tr>
+                                    <th scope="col">n° trem</th>
+                                    <th scope="col">saída</th>
+                                    <th scope="col">chegada</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="flex flex-col align-items-start">
+                            <p><strong>Trens em atraso</strong></p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
+                            <p>[id do trem]</p>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="conteudo">
+                    <h3>Alertas</h3>
+                    <div class="alertas flex align-items-center gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="auto" fill="white"
+                            class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                        </svg>
+
+                        <p>Trilho fora de curso - Linha 0063</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- <-- Agora primeiro -->
+    <script src="/Tela principal/dados.js"></script> <!-- <-- Agora depois -->
+    <script src="TelaPrincipal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+        </script>
 </body>
+
 </html>
