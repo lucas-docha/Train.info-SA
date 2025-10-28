@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 
 // Recupera mensagens da sessão
 $erro = $_SESSION['erro'] ?? '';
@@ -29,7 +29,7 @@ unset($_SESSION['sucesso']);
             font-size: 14px;
             text-align: center;
         }
-        
+
         .msg-sucesso {
             background-color: #44ff44;
             color: #1a1e34;
@@ -39,19 +39,19 @@ unset($_SESSION['sucesso']);
             font-size: 14px;
             text-align: center;
         }
-        
+
         .criar-conta {
             text-align: center;
             margin-top: 20px;
             color: white;
             font-size: 14px;
         }
-        
+
         .criar-conta a {
             color: #6ce5e8;
             text-decoration: none;
         }
-        
+
         .criar-conta a:hover {
             text-decoration: underline;
         }
@@ -87,11 +87,7 @@ unset($_SESSION['sucesso']);
                         <label for="email">Email</label>
                     </div>
                     <div class="caixa">
-                        <input type="email" 
-                               id="email" 
-                               name="email" 
-                               placeholder="Insira o seu email aqui!" 
-                               required>
+                        <input type="email" id="email" name="email" placeholder="Insira o seu email aqui!" required>
                     </div>
 
                     <!-- CAMPO SENHA -->
@@ -99,20 +95,13 @@ unset($_SESSION['sucesso']);
                         <label for="password">Senha</label>
                     </div>
                     <div class="caixa">
-                        <input type="password" 
-                               id="password" 
-                               name="password" 
-                               placeholder="Insira sua senha aqui!" 
-                               required>
+                        <input type="password" id="password" name="password" placeholder="Insira sua senha aqui!"
+                            required>
                     </div>
                 </div>
 
                 <!-- CHECKBOX LEMBRAR E ESQUECI SENHA -->
                 <div class="lembrar">
-                    <label>
-                        <input type="checkbox" name="lembrar">
-                        Lembre de mim
-                    </label>
                     <div class="esqueci">
                         <!-- type="button" evita que submeta o form -->
                         <button type="button" onclick="EsqueciSenha()">
@@ -128,42 +117,9 @@ unset($_SESSION['sucesso']);
                 </div>
             </form>
             <!-- Fim do formulário -->
-
-            <!-- LINK PARA CRIAR CONTA -->
-            <div class="criar-conta">
-                Não tem uma conta? <a href="TelaRegistro.php">Cadastre-se aqui</a>
-            </div>
-
-            <!-- DIVISOR "OU ENTRE COM" -->
-            <div>
-                <div class="flex">
-                    <hr style="width: 25%; margin-top: 3rem; color: #bec2d0;">
-                    <p style="color: white;">Ou entre com</p>
-                    <hr style="width: 25%; margin-top: 3rem; color:#bec2d0;">
-                </div>
-            </div>
-
-            <!-- BOTÕES DE LOGIN SOCIAL -->
-            <div class="logar">
-                <!-- FACEBOOK -->
-                <div class="facebook flex">
-                    <button type="button" onclick="facebooklogin()">
-                        <img src="../imgens/facebook-icon.ico" alt="Facebook">
-                        <p style="background-color: #2e3356; color: white;">Facebook</p>
-                    </button>
-                </div>
-                
-                <!-- GOOGLE -->
-                <div class="google flex">
-                    <button type="button" onclick="googlelogin()">
-                        <img src="../imgens/google-icon.ico" alt="Google">
-                        <p style="background-color: #2e3356; color: white;">Google</p>
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
-    
+
     <!-- JavaScript -->
     <script src="TelaLogin.js"></script>
     <script>
@@ -171,9 +127,9 @@ unset($_SESSION['sucesso']);
          * Remove mensagens após 5 segundos
          * Melhora a experiência do usuário
          */
-        setTimeout(function() {
+        setTimeout(function () {
             const msgs = document.querySelectorAll('.msg-erro, .msg-sucesso');
-            msgs.forEach(function(msg) {
+            msgs.forEach(function (msg) {
                 msg.style.transition = 'opacity 0.5s';
                 msg.style.opacity = '0';
                 setTimeout(() => msg.remove(), 500);

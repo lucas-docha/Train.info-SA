@@ -26,12 +26,17 @@ CREATE TABLE IF NOT EXISTS `banco_SA`.`usuario` (
   `email_usuario` VARCHAR(45) NOT NULL,
   `senha_usuario` VARCHAR(255) NOT NULL,
   `cpf_usuario` CHAR(11) NOT NULL,
-  `numerotele_usuario` VARCHAR(11) NULL,
   `nome_usuario` VARCHAR(45) NOT NULL,
-  `cep_usuario` VARCHAR(8) NULL,
-  PRIMARY KEY (`id_usuario`))
-ENGINE = InnoDB;
+  PRIMARY KEY (`id_usuario`));
 
+CREATE TABLE IF NOT EXISTS `banco_SA` . `admin` (
+  `id_admin` INT NOT NULL AUTO_INCREMENT,
+  `email_admin` VARCHAR(45) NOT NULL,
+  `senha_admin` VARCHAR(255) NOT NULL,
+  `cpf_admin` CHAR(11) NOT NULL,
+  `nome_admin` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_admin`)
+);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
