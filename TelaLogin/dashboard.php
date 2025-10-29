@@ -112,6 +112,7 @@ try {
             cursor: pointer;
             text-decoration: none;
             transition: background-color 0.3s;
+            max-width: 9rem;
         }
         
         .btn-menu:hover {
@@ -155,7 +156,8 @@ try {
                 <h2>Menu Rápido</h2>
                 <div class="menu-rapido">
                     <a href="../TelaPrincipal/TelaPrincipal.php" class="btn-menu">Página Principal</a>
-                    <a href="TelaRegistro.php" class="btn-menu">Cadastrar Admin</a>
+                    <a href="TelaRegistroAdmin.php" class="btn-menu">Cadastrar Admin</a>
+                    <a href="TelaRegistroUser.php" class="btn-menu">Cadastrar User</a>
                 </div>
             </div>
 

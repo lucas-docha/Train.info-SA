@@ -1,5 +1,11 @@
 <?php
+
 session_start();
+
+require_once 'verificar_sessao.php';
+protegerPagina();
+
+
 
 // Recupera erros e dados anteriores (se houver)
 $erros = $_SESSION['erros_cadastro'] ?? [];
@@ -27,7 +33,7 @@ function valorCampo($campo)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./TelaLogin.css">
-    <title>Cadastro de Usuário</title>
+    <title>Cadastro de Administrador</title>
     <style>
         /* Estilos específicos para a tela de registro */
         .erro-msg {
@@ -176,6 +182,20 @@ function valorCampo($campo)
             margin-top: 10px;
             display: none;
         }
+
+        h1{
+            margin-bottom: 0;
+        }
+
+        h3{
+            margin-top: 0;
+            color:rgb(207, 207, 207);
+        }
+
+        .container{
+            margin-bottom: 4rem;
+        }
+
     </style>
 </head>
 
@@ -184,6 +204,7 @@ function valorCampo($campo)
         <div class="container">
             <div class="login">
                 <h1>Cadastro</h1>
+                <h3>Administrador</h3>
             </div>
 
             <!-- Exibe erros se houver -->
