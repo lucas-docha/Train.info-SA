@@ -24,17 +24,17 @@ unset($_SESSION['sucesso']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema de Gerenciamento de Trens</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
     <!-- Container centralizado do login -->
-    <div class="login-container">
+    <div class="login-container" style="padding-top: 3rem; padding-bottom: 6rem;">
         
         <!-- Título da página -->
         <div class="titulo-pagina">
             <h1>Login</h1>
-            <p style="color: #6ce5e8; margin-top: 0.5rem;">Sistema de Gerenciamento de Trens</p>
         </div>
 
         <!-- Mensagem de sucesso (ex: após cadastro) -->
@@ -68,7 +68,7 @@ unset($_SESSION['sucesso']);
                     autocomplete="email"
                 >
             </div>
-
+            <br>
             <!-- Campo de senha -->
             <div class="campo-label">
                 <label for="password">Senha</label>
@@ -90,14 +90,6 @@ unset($_SESSION['sucesso']);
             </button>
 
         </form>
-
-        <!-- Informações de teste -->
-        <div style="margin: 2rem 3rem; padding: 15px; background-color: #2e3356; border-radius: 8px; font-size: 12px;">
-            <p style="color: #6ce5e8; font-weight: bold; margin-bottom: 10px;">🔑 Credenciais de Teste:</p>
-            <p style="margin: 5px 0;"><strong>Admin:</strong> admin@sistema.com / admin123</p>
-            <p style="margin: 5px 0;"><strong>Usuário:</strong> usuario@sistema.com / usuario123</p>
-        </div>
-
     </div>
 
     <!-- Rodapé -->
@@ -105,6 +97,7 @@ unset($_SESSION['sucesso']);
         <p>© 2025 Sistema de Gerenciamento de Trens</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <!-- JavaScript -->
     <script>
         /**

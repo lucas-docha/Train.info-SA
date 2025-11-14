@@ -75,6 +75,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios - Sistema de Gerenciamento de Trens</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         /* Estilos específicos para impressão */
         @media print {
@@ -93,7 +94,7 @@ try {
         
         <!-- Cabeçalho -->
         <div class="header-dashboard">
-            <h1>📊 Relatórios Consolidados</h1>
+            <h1>Relatórios Consolidados</h1>
             <div style="display: flex; gap: 10px;">
                 <button onclick="window.print()" class="botao botao-primario">🖨️ Imprimir</button>
                 <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
@@ -104,7 +105,7 @@ try {
              ESTATÍSTICAS GERAIS
              ===================================================== -->
         <div class="card">
-            <h2>📈 Estatísticas Gerais</h2>
+            <h2>Estatísticas Gerais</h2>
             <div class="cards-container">
                 
                 <div style="background-color: #2e3356; padding: 15px; border-radius: 8px;">
@@ -135,7 +136,7 @@ try {
              RELATÓRIO DE SENSORES
              ===================================================== -->
         <div class="card">
-            <h2>📡 Últimas Leituras de Sensores</h2>
+            <h2>Últimas Leituras de Sensores</h2>
             
             <?php if (empty($sensores)): ?>
                 <p style="text-align: center; color: #6ce5e8;">Nenhum sensor registrado.</p>
@@ -158,9 +159,9 @@ try {
                                 <td>
                                     <?php
                                     $tipos = [
-                                        'presenca' => '👁️ Presença',
-                                        'umidade_temperatura' => '🌡️ Umidade/Temp',
-                                        'iluminacao' => '💡 Iluminação'
+                                        'presenca' => 'Presença',
+                                        'umidade_temperatura' => 'Umidade/Temp',
+                                        'iluminacao' => 'Iluminação'
                                     ];
                                     echo $tipos[$sensor['tipo_sensor']] ?? $sensor['tipo_sensor'];
                                     ?>
@@ -172,10 +173,10 @@ try {
                                             '<span style="color: #44ff44;">✓ Detectado</span>' : 
                                             '<span style="color: #ff4444;">✗ Não detectado</span>';
                                     } elseif ($sensor['tipo_sensor'] == 'umidade_temperatura') {
-                                        echo "🌡️ " . $sensor['temperatura'] . "°C | ";
-                                        echo "💧 " . $sensor['umidade'] . "%";
+                                        echo "" . $sensor['temperatura'] . "°C | ";
+                                        echo "" . $sensor['umidade'] . "%";
                                     } elseif ($sensor['tipo_sensor'] == 'iluminacao') {
-                                        echo "💡 " . $sensor['nivel_iluminacao'] . "/255";
+                                        echo "" . $sensor['nivel_iluminacao'] . "/255";
                                     }
                                     ?>
                                 </td>
@@ -242,7 +243,7 @@ try {
              RELATÓRIO DE ROTAS
              ===================================================== -->
         <div class="card">
-            <h2>🚆 Rotas Cadastradas</h2>
+            <h2>Rotas Cadastradas</h2>
             
             <?php if (empty($rotas)): ?>
                 <p style="text-align: center; color: #6ce5e8;">Nenhuma rota registrada.</p>
@@ -283,5 +284,6 @@ try {
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

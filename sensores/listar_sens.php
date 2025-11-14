@@ -32,6 +32,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sensores - Sistema de Gerenciamento de Trens</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -39,9 +40,9 @@ try {
         
         <!-- Cabeçalho -->
         <div class="header-dashboard">
-            <h1>📡 Sensores</h1>
+            <h1>Sensores</h1>
             <div style="display: flex; gap: 10px;">
-                <a href="cadastrar.php" class="botao botao-sucesso">➕ Novo Sensor</a>
+                <a href="cadastrar.php" class="botao botao-primario">Novo Sensor</a>
                 <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
             </div>
         </div>
@@ -79,9 +80,9 @@ try {
                                     <?php
                                     // Exibe tipo do sensor formatado
                                     $tipos = [
-                                        'presenca' => '👁️ Presença',
-                                        'umidade_temperatura' => '🌡️ Umidade/Temp',
-                                        'iluminacao' => '💡 Iluminação'
+                                        'presenca' => 'Presença',
+                                        'umidade_temperatura' => 'Umidade/Temp',
+                                        'iluminacao' => 'Iluminação'
                                     ];
                                     echo $tipos[$sensor['tipo_sensor']] ?? $sensor['tipo_sensor'];
                                     ?>
@@ -130,5 +131,6 @@ try {
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

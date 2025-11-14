@@ -55,12 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Manutenção</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
         <div class="header-dashboard">
-            <h1>✏️ Editar Manutenção #<?= $id ?></h1>
+            <h1>Editar Manutenção #<?= $id ?></h1>
             <a href="listar.php" class="botao botao-secundario">← Voltar</a>
         </div>
 
@@ -106,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="campo-input">
                     <textarea name="comentario"><?= sanitizar($manutencao['comentario']) ?></textarea>
                 </div>
-
+                <br>
                 <button type="submit" class="botao botao-primario botao-completo">Atualizar</button>
             </form>
         </div>
@@ -115,5 +116,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>© 2025 Sistema de Gerenciamento de Trens</p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

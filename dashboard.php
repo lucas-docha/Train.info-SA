@@ -58,6 +58,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistema de Gerenciamento de Trens</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
@@ -84,7 +85,7 @@ try {
             
             <!-- Card: Sensores -->
             <div class="card">
-                <h2>📡 Sensores</h2>
+                <h2>Sensores</h2>
                 <p><span class="label">Total de Leituras:</span> <?= $totalSensores ?></p>
                 <div style="margin-top: 15px;">
                     <a href="sensores/listar.php" class="botao botao-primario" style="font-size: 14px;">
@@ -95,7 +96,7 @@ try {
 
             <!-- Card: Manutenções -->
             <div class="card">
-                <h2>🔧 Manutenções</h2>
+                <h2>Manutenções</h2>
                 <p><span class="label">Pendentes:</span> <?= $manutencoesPendentes ?></p>
                 <div style="margin-top: 15px;">
                     <a href="manutencoes/listar.php" class="botao botao-primario" style="font-size: 14px;">
@@ -106,7 +107,7 @@ try {
 
             <!-- Card: Rotas -->
             <div class="card">
-                <h2>🚆 Rotas</h2>
+                <h2>Rotas</h2>
                 <p><span class="label">Total de Rotas:</span> <?= $totalRotas ?></p>
                 <div style="margin-top: 15px;">
                     <a href="rotas/listar.php" class="botao botao-primario" style="font-size: 14px;">
@@ -118,7 +119,7 @@ try {
             <!-- Card: Usuários (apenas admin) -->
             <?php if ($ehAdmin): ?>
             <div class="card">
-                <h2>👥 Usuários</h2>
+                <h2>Usuários</h2>
                 <p><span class="label">Total de Usuários:</span> <?= $totalUsuarios ?></p>
                 <div style="margin-top: 15px;">
                     <a href="usuarios/listar.php" class="botao botao-primario" style="font-size: 14px;">
@@ -131,38 +132,10 @@ try {
         </div>
 
         <!-- =====================================================
-             MENU RÁPIDO
-             ===================================================== -->
-        <div class="card">
-            <h2>⚡ Menu Rápido</h2>
-            <div class="menu-rapido">
-                
-                <!-- Links para todos os usuários -->
-                <a href="sensores/cadastrar.php" class="btn-menu">➕ Novo Sensor</a>
-                <a href="manutencoes/cadastrar.php" class="btn-menu">➕ Nova Manutenção</a>
-                <a href="rotas/cadastrar.php" class="btn-menu">➕ Nova Rota</a>
-                <a href="relatorios/visualizar.php" class="btn-menu">📊 Relatórios</a>
-                
-                <!-- Link para tela experimental -->
-                <a href="experimental/tela_teste.php" class="btn-menu" style="background-color: #ffaa00; color: #1a1e34;">
-                    🧪 Tela Experimental
-                </a>
-                
-                <!-- Links apenas para admin -->
-                <?php if ($ehAdmin): ?>
-                <a href="usuarios/cadastrar.php" class="btn-menu" style="background-color: #ff4444;">
-                    👤 Cadastrar Usuário
-                </a>
-                <?php endif; ?>
-                
-            </div>
-        </div>
-
-        <!-- =====================================================
              INFORMAÇÕES DO USUÁRIO
              ===================================================== -->
         <div class="card">
-            <h2>👤 Minhas Informações</h2>
+            <h2>Minhas Informações</h2>
             <p><span class="label">Nome:</span> <?= sanitizar($usuario['nome']) ?></p>
             <p><span class="label">Email:</span> <?= sanitizar($usuario['email']) ?></p>
             <p><span class="label">Tipo de Acesso:</span> 
@@ -180,5 +153,6 @@ try {
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

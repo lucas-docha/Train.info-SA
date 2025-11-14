@@ -25,6 +25,7 @@ CREATE TABLE usuarios (
     senha_usuario VARCHAR(255) NOT NULL,
     cpf_usuario CHAR(11) NOT NULL UNIQUE,
     tipo_usuario ENUM('admin', 'usuario') NOT NULL DEFAULT 'usuario',
+    status_usuario ENUM('ativo', 'inativo') NOT NULL DEFAULT 'ativo',
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     INDEX idx_email (email_usuario),
     INDEX idx_tipo (tipo_usuario)
@@ -98,24 +99,26 @@ CREATE TABLE rotas (
 
 -- Insere usuário administrador padrão
 -- Senha: admin123 (hash gerado com password_hash)
-INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, cpf_usuario, tipo_usuario) 
+INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, cpf_usuario, tipo_usuario, status_usuario) 
 VALUES (
     'Administrador do Sistema',
     'admin@sistema.com',
     'admin123',  -- senha: admin123
     '00000000000',
-    'admin'
+    'admin',
+    'ativo'
 );
 
 -- Insere usuário comum de teste
 -- Senha: usuario123
-INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, cpf_usuario, tipo_usuario) 
+INSERT INTO usuarios (nome_usuario, email_usuario, senha_usuario, cpf_usuario, tipo_usuario, status_usuario) 
 VALUES (
     'Usuário Teste',
     'usuario@sistema.com',
     'usuario123',  -- senha: usuario123
     '11111111111',
-    'usuario'
+    'usuario',
+    'ativo'
 );
 
 -- Insere dados de exemplo para sensores

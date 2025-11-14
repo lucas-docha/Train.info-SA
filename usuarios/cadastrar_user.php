@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpf = preg_replace('/[^0-9]/', '', $_POST['cpf_usuario'] ?? '');
     $senha = $_POST['senha_usuario'] ?? '';
     $tipo = $_POST['tipo_usuario'] ?? 'usuario';
+    $status = $_POST['status_usuario'] ?? 'ativo';
     
     $erros = [];
     
@@ -47,15 +48,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
             
-            $sql = "INSERT INTO usuarios (nome_usuario, email_usuario, cpf_usuario, senha_usuario, tipo_usuario) 
-                    VALUES (:nome, :email, :cpf, :senha, :tipo)";
+            $sql = "INSERT INTO usuarios (nome_usuario, email_usuario, cpf_usuario, senha_usuario, tipo_usuario, status_usuario) 
+                    VALUES (:nome, :email, :cpf, :senha, :tipo, :status)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'nome' => $nome,
                 'email' => $email,
                 'cpf' => $cpf,
                 'senha' => $senha_hash,
-                'tipo' => $tipo
+                'tipo' => $tipo,
+                'status' => $status
             ]);
             
             $sucesso = "Usuário cadastrado com sucesso!";
@@ -74,13 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuário</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
         
         <div class="header-dashboard">
-            <h1>➕ Cadastrar Usuário</h1>
+            <h1>Cadastrar Usuário</h1>
             <a href="listar.php" class="botao botao-secundario">← Voltar</a>
         </div>
 
@@ -136,11 +139,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="tipo_usuario">Tipo de Usuário *</label>
                 </div>
                 <div class="campo-input">
-                    <select name="tipo_usuario" id="tipo_usuario" required>
-                        <option value="usuario">Usuário Comum</option>
-                        <option value="admin">Administrador</option>
-                    </select>
-                </div>
+	                    <select name="tipo_usuario" id="tipo_usuario" required>
+	                        <option value="usuario">Usuário Comum</option>
+	                        <option value="admin">Administrador</option>
+	                    </select>
+	                </div>
+
+	                <div class="campo-label">
+	                    <label for="status_usuario">Status do Usuário *</label>
+	                </div>
+	                <div class="campo-input">
+	                    <select name="status_usuario" id="status_usuario" required>
+	                        <option value="ativo">Ativo</option>
+	                        <option value="inativo">Não Ativo</option>
+	                    </select>
+	                </div>
 
                 <button type="submit" class="botao botao-primario botao-completo">
                     Cadastrar Usuário
@@ -167,5 +180,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             e.target.value = value;
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

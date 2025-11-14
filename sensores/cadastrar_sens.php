@@ -79,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Sensor - Sistema de Gerenciamento de Trens</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -86,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <!-- Cabeçalho -->
         <div class="header-dashboard">
-            <h1>➕ Cadastrar Sensor</h1>
+            <h1>Cadastrar Sensor</h1>
             <a href="listar.php" class="botao botao-secundario">← Voltar</a>
         </div>
 
@@ -110,9 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="campo-input">
                     <select name="tipo_sensor" id="tipo_sensor" required onchange="mostrarCampos()">
                         <option value="">Selecione...</option>
-                        <option value="presenca">👁️ Presença (Ultrassônico)</option>
-                        <option value="umidade_temperatura">🌡️ Umidade e Temperatura (DHT11)</option>
-                        <option value="iluminacao">💡 Iluminação (LDR)</option>
+                        <option value="presenca">Presença (Ultrassônico)</option>
+                        <option value="umidade_temperatura">Umidade e Temperatura (DHT11)</option>
+                        <option value="iluminacao">Iluminação (LDR)</option>
                     </select>
                 </div>
 
@@ -204,5 +205,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

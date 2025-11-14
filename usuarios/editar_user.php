@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome_usuario'] ?? '';
     $email = $_POST['email_usuario'] ?? '';
     $tipo = $_POST['tipo_usuario'] ?? 'usuario';
+    $status = $_POST['status_usuario'] ?? 'ativo';
     $nova_senha = $_POST['nova_senha'] ?? '';
     
     try {
@@ -29,24 +30,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Atualiza com nova senha
             $senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
             $sql = "UPDATE usuarios SET nome_usuario = :nome, email_usuario = :email, 
-                    tipo_usuario = :tipo, senha_usuario = :senha WHERE id_usuario = :id";
+                    tipo_usuario = :tipo, status_usuario = :status, senha_usuario = :senha WHERE id_usuario = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'nome' => $nome,
                 'email' => $email,
                 'tipo' => $tipo,
+                'status' => $status,
                 'senha' => $senha_hash,
                 'id' => $id
             ]);
         } else {
             // Atualiza sem alterar senha
             $sql = "UPDATE usuarios SET nome_usuario = :nome, email_usuario = :email, 
-                    tipo_usuario = :tipo WHERE id_usuario = :id";
+                    tipo_usuario = :tipo, status_usuario = :status WHERE id_usuario = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'nome' => $nome,
                 'email' => $email,
                 'tipo' => $tipo,
+                'status' => $status,
                 'id' => $id
             ]);
         }
@@ -70,12 +73,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuário</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
         <div class="header-dashboard">
-            <h1>✏️ Editar Usuário #<?= $id ?></h1>
+            <h1>Editar Usuário #<?= $id ?></h1>
             <a href="listar.php" class="botao botao-secundario">← Voltar</a>
         </div>
 
@@ -114,11 +118,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="tipo_usuario">Tipo de Usuário</label>
                 </div>
                 <div class="campo-input">
-                    <select name="tipo_usuario" required>
-                        <option value="usuario" <?= $usuario['tipo_usuario'] == 'usuario' ? 'selected' : '' ?>>Usuário Comum</option>
-                        <option value="admin" <?= $usuario['tipo_usuario'] == 'admin' ? 'selected' : '' ?>>Administrador</option>
-                    </select>
-                </div>
+	                    <select name="tipo_usuario" required>
+	                        <option value="usuario" <?= $usuario['tipo_usuario'] == 'usuario' ? 'selected' : '' ?>>Usuário Comum</option>
+	                        <option value="admin" <?= $usuario['tipo_usuario'] == 'admin' ? 'selected' : '' ?>>Administrador</option>
+	                    </select>
+	                </div>
+
+	                <div class="campo-label">
+	                    <label for="status_usuario">Status do Usuário</label>
+	                </div>
+	                <div class="campo-input">
+	                    <select name="status_usuario" required>
+	                        <option value="ativo" <?= $usuario['status_usuario'] == 'ativo' ? 'selected' : '' ?>>Ativo</option>
+	                        <option value="inativo" <?= $usuario['status_usuario'] == 'inativo' ? 'selected' : '' ?>>Não Ativo</option>
+	                    </select>
+	                </div>
 
                 <div class="campo-label">
                     <label for="nova_senha">Nova Senha (deixe em branco para não alterar)</label>
@@ -126,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="campo-input">
                     <input type="password" name="nova_senha" placeholder="Digite apenas se quiser alterar">
                 </div>
-
+                <br>
                 <button type="submit" class="botao botao-primario botao-completo">Atualizar</button>
             </form>
         </div>
@@ -135,5 +149,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>© 2025 Sistema de Gerenciamento de Trens</p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -393,6 +393,17 @@ h3 {
     color: white;
 }
 
+/* Estilos para Status */
+.badge-ativo {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+}
+
+.badge-inativo {
+    background-color: #F44336; /* Vermelho */
+    color: white;
+}
+
 .badge-pendente {
     background-color: #ffaa00;
     color: #1a1e34;

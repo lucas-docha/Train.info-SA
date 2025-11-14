@@ -33,15 +33,16 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manutenções - Sistema de Gerenciamento de Trens</title>
     <link rel="stylesheet" href="../css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container">
         
         <div class="header-dashboard">
-            <h1>🔧 Manutenções</h1>
+            <h1>Manutenções</h1>
             <div style="display: flex; gap: 10px;">
-                <a href="cadastrar.php" class="botao botao-sucesso">➕ Nova Manutenção</a>
+                <a href="cadastrar.php" class="botao botao-primario">Nova Manutenção</a>
                 <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
             </div>
         </div>
@@ -98,10 +99,10 @@ try {
                                 <td>
                                     <div class="tabela-acoes">
                                         <a href="editar.php?id=<?= $man['id_manutencao'] ?>" 
-                                           class="btn-tabela btn-editar">✏️ Editar</a>
+                                           class="btn-tabela btn-editar">Editar</a>
                                         <a href="excluir.php?id=<?= $man['id_manutencao'] ?>" 
                                            class="btn-tabela btn-excluir"
-                                           onclick="return confirm('Excluir esta manutenção?')">🗑️ Excluir</a>
+                                           onclick="return confirm('Excluir esta manutenção?')">Excluir</a>
                                     </div>
                                 </td>
                             </tr>
@@ -117,5 +118,6 @@ try {
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
