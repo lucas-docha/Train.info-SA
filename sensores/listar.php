@@ -91,13 +91,13 @@ try {
                                     // Exibe dados específicos de cada tipo
                                     if ($sensor['tipo_sensor'] == 'presenca') {
                                         echo $sensor['presenca_detectada'] ? 
-                                            '<span style="color: #44ff44;">✓ Detectado</span>' : 
-                                            '<span style="color: #ff4444;">✗ Não detectado</span>';
+                                            '<span style="color: #44ff44;">Detectado</span>' : 
+                                            '<span style="color: #ff4444;">Não detectado</span>';
                                     } elseif ($sensor['tipo_sensor'] == 'umidade_temperatura') {
-                                        echo "🌡️ " . $sensor['temperatura'] . "°C<br>";
-                                        echo "💧 " . $sensor['umidade'] . "%";
+                                        echo "" . $sensor['temperatura'] . "°C<br>";
+                                        echo "" . $sensor['umidade'] . "%";
                                     } elseif ($sensor['tipo_sensor'] == 'iluminacao') {
-                                        echo "💡 " . $sensor['nivel_iluminacao'] . "/255";
+                                        echo "" . $sensor['nivel_iluminacao'] . "/255";
                                     }
                                     ?>
                                 </td>
@@ -107,12 +107,12 @@ try {
                                     <div class="tabela-acoes">
                                         <a href="editar.php?id=<?= $sensor['id_sensor'] ?>" 
                                            class="btn-tabela btn-editar">
-                                            ✏️ Editar
+                                            Editar
                                         </a>
                                         <a href="excluir.php?id=<?= $sensor['id_sensor'] ?>" 
                                            class="btn-tabela btn-excluir"
                                            onclick="return confirm('Tem certeza que deseja excluir este sensor?')">
-                                            🗑️ Excluir
+                                            Excluir
                                         </a>
                                     </div>
                                 </td>
