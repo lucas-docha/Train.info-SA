@@ -68,15 +68,62 @@ try {
         <!-- =====================================================
              CABEÇALHO DO DASHBOARD
              ===================================================== -->
-        <div class="header-dashboard">
-            <h1 class="welcome-msg">
-                Olá, <?= sanitizar($nomeExibicao) ?>! 
-                <span class="badge <?= $ehAdmin ? 'badge-admin' : 'badge-usuario' ?>">
-                    <?= $tipoUsuario ?>
-                </span>
-            </h1>
-            <a href="logout.php" class="botao botao-perigo">Sair</a>
-        </div>
+	        <!-- =====================================================
+	             NAVBAR RESPONSIVA
+	             ===================================================== -->
+	        <nav class="navbar-custom">
+	            <div class="navbar-header">
+	                <h1 class="welcome-msg">
+	                    Olá, <?= sanitizar($nomeExibicao) ?>! 
+	                    <span class="badge <?= $ehAdmin ? 'badge-admin' : 'badge-usuario' ?>">
+	                        <?= $tipoUsuario ?>
+	                    </span>
+	                </h1>
+	                <a href="logout.php" class="botao botao-perigo">Sair</a>
+	            </div>
+	
+	            <!-- Botão Hamburguer para Offcanvas (Visível em telas pequenas) -->
+	            <button class="navbar-toggler-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon-custom"></span>
+	            </button>
+	
+	            <!-- Menu Horizontal (Visível em telas grandes) -->
+	            <div class="navbar-menu-desktop">
+	                <ul class="navbar-nav-custom">
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="sensores/listar.php">Sensores</a></li>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="manutencoes/listar.php">Manutenções</a></li>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="rotas/listar.php">Rotas</a></li>
+	                    <?php if ($ehAdmin): ?>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="usuarios/listar.php">Usuários</a></li>
+	                    <?php endif; ?>
+	                </ul>
+	            </div>
+	        </nav>
+	
+	        <!-- Offcanvas Sidebar (Visível em telas pequenas) -->
+	        <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+	            <div class="offcanvas-header">
+	                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+	                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	            </div>
+	            <div class="offcanvas-body">
+	                <ul class="navbar-nav-custom justify-content-end flex-grow-1 pe-3">
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="sensores/listar.php">Sensores</a></li>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="manutencoes/listar.php">Manutenções</a></li>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="rotas/listar.php">Rotas</a></li>
+	                    <?php if ($ehAdmin): ?>
+	                    <li class="nav-item-custom"><a class="nav-link-custom" href="usuarios/listar.php">Usuários</a></li>
+	                    <?php endif; ?>
+	                </ul>
+	            </div>
+	        </div>
+	
+	        <!-- Espaço de 2rem entre a div "OLÁ" e o restante do conteúdo -->
+	        <div style="height: 2rem;"></div>
+	
+	        <!-- =====================================================
+	             ESTATÍSTICAS RÁPIDAS
+	             ===================================================== -->
 
         <!-- =====================================================
              ESTATÍSTICAS RÁPIDAS
@@ -87,33 +134,21 @@ try {
             <div class="card">
                 <h2>Sensores</h2>
                 <p><span class="label">Total de Leituras:</span> <?= $totalSensores ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="sensores/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Sensores
-                    </a>
-                </div>
+	                <!-- Link removido e movido para a navbar -->
             </div>
 
             <!-- Card: Manutenções -->
             <div class="card">
                 <h2>Manutenções</h2>
                 <p><span class="label">Pendentes:</span> <?= $manutencoesPendentes ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="manutencoes/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Manutenções
-                    </a>
-                </div>
+	                <!-- Link removido e movido para a navbar -->
             </div>
 
             <!-- Card: Rotas -->
             <div class="card">
                 <h2>Rotas</h2>
                 <p><span class="label">Total de Rotas:</span> <?= $totalRotas ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="rotas/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Rotas
-                    </a>
-                </div>
+	                <!-- Link removido e movido para a navbar -->
             </div>
 
             <!-- Card: Usuários (apenas admin) -->
@@ -121,11 +156,7 @@ try {
             <div class="card">
                 <h2>Usuários</h2>
                 <p><span class="label">Total de Usuários:</span> <?= $totalUsuarios ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="usuarios/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Gerenciar Usuários
-                    </a>
-                </div>
+	                <!-- Link removido e movido para a navbar -->
             </div>
             <?php endif; ?>
 

@@ -34,6 +34,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 5rem; /* Adiciona padding no topo para compensar a navbar fixa de 5rem */
 }
 
 /* Container de login (centralizado) */
@@ -499,3 +500,185 @@ h3 {
 /* =====================================================
    FIM DA FOLHA DE ESTILO
    ===================================================== */
+
+/* =====================================================
+   NAVBAR RESPONSIVA PERSONALIZADA
+   ===================================================== */
+
+.navbar-custom {
+    background-color: #131630; /* Fundo da navbar */
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Largura total */
+    height: 5rem; /* Altura de 5rem */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Ajuste o padding para a altura de 5rem */
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    z-index: 1030; /* Garante que fique acima de outros elementos */
+    border-radius: 0; /* Remove o border-radius para ir até as bordas */
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Espaço entre "Olá" e "Sair" */
+    /* Garante que o Olá e o Sair fiquem alinhados verticalmente no centro da navbar de 5rem */
+    height: 5rem; 
+}
+
+.navbar-header .welcome-msg {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* Montserrat - bold já está na importação */
+}
+
+.navbar-header .botao-perigo {
+    /* Estilo do botão Sair */
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+/* Estilos para o Menu Horizontal (Desktop) */
+.navbar-menu-desktop {
+    display: none; /* Escondido por padrão */
+}
+
+.navbar-nav-custom {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espaçamento entre os tópicos */
+}
+
+.nav-item-custom {
+    /* Garante que os itens não tenham estilos de lista */
+}
+
+.nav-link-custom {
+    color: white; /* Cor da fonte */
+    text-decoration: none;
+    font-weight: bold; /* Montserrat - bold */
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-link-custom:hover {
+    color: #41b8d5; /* Cor de hover */
+}
+
+/* Estilos para o Botão Hamburguer (Mobile) */
+.navbar-toggler-custom {
+    display: block; /* Visível por padrão */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar-toggler-icon-custom {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Estilos para o Offcanvas */
+.offcanvas-custom {
+    background-color: #131630; /* Fundo do offcanvas */
+    color: white;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #2e3356;
+}
+
+.offcanvas-title {
+    color: white;
+    font-weight: bold;
+}
+
+.offcanvas-body .navbar-nav-custom {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.offcanvas-body .nav-link-custom {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+/* Ajuste do botão de fechar do Bootstrap para branco */
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* =====================================================
+   RESPONSIVIDADE DA NAVBAR
+   ===================================================== */
+
+@media (min-width: 999px) {
+    .navbar-custom {
+        /* Altera o layout para incluir o menu horizontal */
+        justify-content: flex-start;
+        gap: 40px; /* Espaço entre o cabeçalho e o menu */
+    }
+
+    .navbar-menu-desktop {
+        display: block; /* Mostra o menu horizontal */
+        flex-grow: 1; /* Ocupa o espaço restante */
+    }
+
+    .navbar-nav-custom {
+        justify-content: space-between; /* Espaçamento igual entre os tópicos */
+        width: 100%;
+    }
+
+    .navbar-toggler-custom {
+        display: none; /* Esconde o botão hamburguer */
+    }
+    
+    /* Remove o estilo antigo do header-dashboard para evitar conflito */
+    .header-dashboard {
+        display: none;
+    }
+}
+
+@media (max-width: 998px) {
+    .navbar-custom {
+        /* Garante que o cabeçalho e o botão hamburguer fiquem alinhados */
+        justify-content: space-between;
+    }
+    
+    .navbar-header {
+        /* Garante que o Olá e o Sair fiquem juntos */
+        gap: 1rem;
+    }
+    
+    .navbar-header .welcome-msg {
+        font-size: 20px;
+    }
+    
+    /* Ajuste para o estilo antigo do header-dashboard que foi substituído */
+    .header-dashboard {
+        /* O estilo antigo do header-dashboard será substituído pelo navbar-custom */
+        /* Mas vamos garantir que o que sobrou dele não cause problemas */
+        margin-bottom: 0; /* O margin-bottom foi movido para .navbar-custom */
+    }
+}
+
+/* Sobrescreve o estilo antigo do header-dashboard para garantir que o novo layout funcione */
+.header-dashboard {
+    display: none; /* Esconde o antigo cabeçalho */
+}
+
+/* O espaçamento de 2rem será tratado pelo padding-top do .container */
+/* Removendo o ajuste de espaçamento anterior */
