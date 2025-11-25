@@ -16,7 +16,7 @@
    ===================================================== */
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; 
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
@@ -25,6 +25,7 @@ body {
     background-color: #1a1e34;
     color: white;
     min-height: 100vh;
+    
 }
 
 /* =====================================================
@@ -224,6 +225,29 @@ h3 {
     background-color: #41b8d5;
     color: white;
 }
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+.navbar {
+    background-color: #131630 !important;
+    color: white !important;
+}
+
+.navbar * {
+    color: white !important;
+}
+
+.offcanvas {
+    background-color: #131630 !important;
+    color: white !important;
+}
+
+.offcanvas a,
+.offcanvas .btn-close {
+    color: white !important;
+}
+
 
 /* =====================================================
    DASHBOARD
