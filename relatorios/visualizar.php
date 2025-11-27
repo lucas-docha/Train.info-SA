@@ -90,7 +90,7 @@ try {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="padding-top: 120px;">
         
         <!-- Cabeçalho -->
         <div class="header-dashboard">

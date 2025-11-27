@@ -65,10 +65,10 @@ try {
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top p-4">
+    <nav class="navbar navbar-dark bg-dark fixed-top p-2">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold flex" href="#">
-                <p>imagem</p>Train.info
+                <div ><p style="font-size: larger; margin: 0;">Train</p><p>.info</p></div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -78,30 +78,34 @@ try {
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
                 aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <h1 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h1>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
+                            <a class="nav-link" href="dashboard.php">Dashboard</a>
                         </li>
                         <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sensores</a>
+                            <a class="nav-link" href="sensores/listar.php">Sensores</a>
                         </li>
                         <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Manutenções</a>
+                            <a class="nav-link" href="manutencoes/listar.php">Manutenções</a>
                         </li>
                         <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Rotas</a>
+                            <a class="nav-link" href="rotas/listar.php">Rotas</a>
                         </li>
                         <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Usuários</a>
+                            <a class="nav-link" href="usuarios/listar.php">Usuários</a>
+                        </li>
+                        <br>
+                        <li class="nav-item">
+                            <a class="nav-link" href="relatorios/visualizar.php">Relatórios</a>
                         </li>
                     </ul>
                 </div>
@@ -129,33 +133,18 @@ try {
             <div class="card">
                 <h2>Sensores</h2>
                 <p><span class="label">Total de Leituras:</span> <?= $totalSensores ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="sensores/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Sensores
-                    </a>
-                </div>
             </div>
 
             <!-- Card: Manutenções -->
             <div class="card">
                 <h2>Manutenções</h2>
                 <p><span class="label">Pendentes:</span> <?= $manutencoesPendentes ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="manutencoes/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Manutenções
-                    </a>
-                </div>
             </div>
 
             <!-- Card: Rotas -->
             <div class="card">
                 <h2>Rotas</h2>
                 <p><span class="label">Total de Rotas:</span> <?= $totalRotas ?></p>
-                <div style="margin-top: 15px;">
-                    <a href="rotas/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                        Ver Rotas
-                    </a>
-                </div>
             </div>
 
             <!-- Card: Usuários (apenas admin) -->
@@ -163,11 +152,6 @@ try {
                 <div class="card">
                     <h2>Usuários</h2>
                     <p><span class="label">Total de Usuários:</span> <?= $totalUsuarios ?></p>
-                    <div style="margin-top: 15px;">
-                        <a href="usuarios/listar.php" class="botao botao-primario" style="font-size: 14px;">
-                            Gerenciar Usuários
-                        </a>
-                    </div>
                 </div>
             <?php endif; ?>
 

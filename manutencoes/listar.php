@@ -15,6 +15,13 @@ $sucesso = $_SESSION['sucesso'] ?? '';
 $erro = $_SESSION['erro'] ?? '';
 unset($_SESSION['sucesso'], $_SESSION['erro']);
 
+// Recupera dados do usuário logado
+$usuario = dadosUsuario();
+$nomeExibicao = nomeExibicao();
+$tipoUsuario = tipoUsuarioExibicao();
+$ehAdmin = ehAdmin();
+
+
 // Busca manutenções
 try {
     $sql = "SELECT * FROM manutencoes ORDER BY criado_em DESC";
@@ -37,14 +44,16 @@ try {
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="padding-top: 120px;">
         
         <div class="header-dashboard">
             <h1>Manutenções</h1>
-            <div style="display: flex; gap: 10px;">
-                <a href="cadastrar.php" class="botao botao-primario">Nova Manutenção</a>
-                <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
-            </div>
+            <?php if ($ehAdmin): ?>
+                <div style="display: flex; gap: 10px;">
+                    <a href="cadastrar.php" class="botao botao-primario">Nova Manutenção</a>
+                    <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
+                </div>
+            <?php endif; ?>
         </div>
 
         <div class="card">
@@ -72,7 +81,9 @@ try {
                                 <th>Data Início</th>
                                 <th>Data Término</th>
                                 <th>Comentário</th>
+                                <?php if ($ehAdmin): ?>
                                 <th>Ações</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,6 +108,7 @@ try {
                                 <td><?= formatarData($man['data_termino']) ?></td>
                                 <td><?= sanitizar(substr($man['comentario'], 0, 50)) ?><?= strlen($man['comentario']) > 50 ? '...' : '' ?></td>
                                 <td>
+                                    <?php if ($ehAdmin): ?>
                                     <div class="tabela-acoes">
                                         <a href="editar.php?id=<?= $man['id_manutencao'] ?>" 
                                            class="btn-tabela btn-editar">Editar</a>
@@ -104,6 +116,7 @@ try {
                                            class="btn-tabela btn-excluir"
                                            onclick="return confirm('Excluir esta manutenção?')">Excluir</a>
                                     </div>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
