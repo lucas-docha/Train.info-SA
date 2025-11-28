@@ -37,6 +37,14 @@ try {
     $stmt = $pdo->query("SELECT COUNT(*) as total FROM rotas");
     $totalRotas = $stmt->fetch()['total'];
 
+    // Conta total de trens
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM trens");
+    $totalTrens = $stmt->fetch()['total'];
+
+    // Conta trens operantes
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM trens WHERE status_trem = 'operante'");
+    $trensOperantes = $stmt->fetch()['total'];
+
     // Conta total de usuários (apenas admin pode ver)
     if ($ehAdmin) {
         $stmt = $pdo->query("SELECT COUNT(*) as total FROM usuarios");
@@ -48,6 +56,8 @@ try {
     $totalSensores = 0;
     $manutencoesPendentes = 0;
     $totalRotas = 0;
+    $totalTrens = 0;
+    $trensOperantes = 0;
     $totalUsuarios = 0;
 }
 ?>
@@ -86,6 +96,10 @@ try {
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard.php">Dashboard</a>
+                        </li>
+                        <br>
+                        <li class="nav-item">
+                            <a class="nav-link" href="trens/listar.php">Trens</a>
                         </li>
                         <br>
                         <li class="nav-item">
@@ -128,6 +142,13 @@ try {
              ESTATÍSTICAS RÁPIDAS
              ===================================================== -->
         <div class="cards-container">
+
+            <!-- Card: Trens -->
+            <div class="card">
+                <h2>Trens</h2>
+                <p><span class="label">Total de Trens:</span> <?= $totalTrens ?></p>
+                <p><span class="label">Operantes:</span> <?= $trensOperantes ?></p>
+            </div>
 
             <!-- Card: Sensores -->
             <div class="card">

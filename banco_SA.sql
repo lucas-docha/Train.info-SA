@@ -94,6 +94,33 @@ CREATE TABLE rotas (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- =====================================================
+-- TABELA: trens
+-- =====================================================
+-- Armazena informações sobre os trens do sistema
+CREATE TABLE trens (
+    id_trem INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tipo_trem ENUM('transporte', 'carga') NOT NULL,
+    carga_trem VARCHAR(100) DEFAULT NULL,
+    status_trem ENUM('operante', 'em_manutencao', 'fora_de_servico') NOT NULL DEFAULT 'operante',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    INDEX idx_tipo (tipo_trem),
+    INDEX idx_status (status_trem)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- =====================================================
+-- DADOS INICIAIS DE EXEMPLO
+-- =====================================================
+INSERT INTO trens (tipo_trem, carga_trem, status_trem) VALUES
+('transporte', NULL, 'operante'),
+('transporte', NULL, 'operante'),
+('carga', 'Minério de ferro', 'operante'),
+('carga', 'Grãos', 'em_manutencao'),
+('transporte', NULL, 'fora_de_servico'),
+('carga', 'Combustível', 'operante');
+
+-- =====================================================
 -- DADOS INICIAIS DE TESTE
 -- =====================================================
 
