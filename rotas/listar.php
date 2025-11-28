@@ -8,6 +8,12 @@
 require_once '../verificar_sessao.php';
 require_once '../config.php';
 
+// Recupera dados do usuário logado
+$usuario = dadosUsuario();
+$nomeExibicao = nomeExibicao();
+$tipoUsuario = tipoUsuarioExibicao();
+$ehAdmin = ehAdmin();
+
 protegerPagina();
 
 $sucesso = $_SESSION['sucesso'] ?? '';
@@ -39,10 +45,14 @@ try {
         
         <div class="header-dashboard">
             <h1>Rotas</h1>
+            <?php if ($ehAdmin): ?>
             <div style="display: flex; gap: 10px;">
                 <a href="cadastrar.php" class="botao botao-primario">Nova Rota</a>
                 <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
             </div>
+            <?php else: ?>
+                <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
+            <?php endif; ?>
         </div>
 
         <div class="card">
@@ -84,6 +94,7 @@ try {
                                 <td><?= substr($rota['horario_chegada'], 0, 5) ?></td>
                                 <td><?= calcularDuracao($rota['horario_saida'], $rota['horario_chegada']) ?></td>
                                 <td>
+                                    <?php if ($ehAdmin): ?>
                                     <div class="tabela-acoes">
                                         <a href="editar.php?id=<?= $rota['id_rota'] ?>" 
                                            class="btn-tabela btn-editar">Editar</a>
@@ -91,6 +102,9 @@ try {
                                            class="btn-tabela btn-excluir"
                                            onclick="return confirm('Excluir esta rota?')">Excluir</a>
                                     </div>
+                                    <?php else: ?>
+                                        <span style="color: #6ce5e8;">-</span>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

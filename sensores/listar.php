@@ -12,6 +12,12 @@ require_once '../config.php';
 // Protege a página
 protegerPagina();
 
+// Recupera dados do usuário logado
+$usuario = dadosUsuario();
+$nomeExibicao = nomeExibicao();
+$tipoUsuario = tipoUsuarioExibicao();
+$ehAdmin = ehAdmin();
+
 // =====================================================
 // BUSCA SENSORES NO BANCO
 // =====================================================
@@ -41,10 +47,14 @@ try {
         <!-- Cabeçalho -->
         <div class="header-dashboard">
             <h1>Sensores</h1>
+            <?php if ($ehAdmin): ?>
             <div style="display: flex; gap: 10px;">
                 <a href="cadastrar.php" class="botao botao-primario">Novo Sensor</a>
                 <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
             </div>
+            <?php else: ?>
+                <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
+            <?php endif; ?>
         </div>
 
         <!-- Tabela de sensores -->
@@ -105,6 +115,7 @@ try {
                                 <td><?= sanitizar($sensor['descricao'] ?? '-') ?></td>
                                 <td><?= formatarTimestamp($sensor['timestamp_leitura']) ?></td>
                                 <td>
+                                    <?php if ($ehAdmin): ?>
                                     <div class="tabela-acoes">
                                         <a href="editar.php?id=<?= $sensor['id_sensor'] ?>" 
                                            class="btn-tabela btn-editar">
@@ -116,6 +127,9 @@ try {
                                             Excluir
                                         </a>
                                     </div>
+                                    <?php else: ?>
+                                        <span style="color: #6ce5e8;">-</span>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>

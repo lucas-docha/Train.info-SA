@@ -52,8 +52,8 @@ try {
                     <a href="cadastrar.php" class="botao botao-primario">Novo Trem</a>
                     <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
                 </div>
-            <?php else: ?>
-                <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
+                <?php else: ?>
+                    <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
             <?php endif; ?>
         </div>
 

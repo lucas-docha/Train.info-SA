@@ -51,6 +51,14 @@ try {
         $totalUsuarios = $stmt->fetch()['total'];
     }
 
+    // Conta notificações
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM notificacoes");
+    $totalNotificacoes = $stmt->fetch()['total'];
+
+    // Conta notificações críticas
+    $stmt = $pdo->query("SELECT COUNT(*) as total FROM notificacoes WHERE gravidade = 'critica'");
+    $notificacoesCriticas = $stmt->fetch()['total'];
+
 } catch (PDOException $e) {
     // Em caso de erro, define valores padrão
     $totalSensores = 0;
@@ -59,6 +67,8 @@ try {
     $totalTrens = 0;
     $trensOperantes = 0;
     $totalUsuarios = 0;
+    $totalNotificacoes = 0;
+    $notificacoesCriticas = 0;
 }
 ?>
 
@@ -115,9 +125,21 @@ try {
                         </li>
                         <br>
                         <li class="nav-item">
-                            <a class="nav-link" href="usuarios/listar.php">Usuários</a>
+                            <a class="nav-link" href="notificacoes/listar.php">
+                                Notificações
+                                <?php if ($totalNotificacoes > 0): ?>
+                                    <span class="badge bg-danger ms-1"><?= $totalNotificacoes ?></span>
+                                <?php endif; ?>
+                            </a>
                         </li>
                         <br>
+                        <?php if ($ehAdmin): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuarios/listar.php">Usuários</a>
+                        </li>
+                         <br>
+                        <?php endif; ?>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="relatorios/visualizar.php">Relatórios</a>
                         </li>
@@ -166,6 +188,23 @@ try {
             <div class="card">
                 <h2>Rotas</h2>
                 <p><span class="label">Total de Rotas:</span> <?= $totalRotas ?></p>
+            </div>
+
+            <!-- Card: Notificações -->
+            <div class="card">
+                <h2>Notificações</h2>
+                <p><span class="label">Total:</span> <?= $totalNotificacoes ?></p>
+                <?php if ($notificacoesCriticas > 0): ?>
+                    <p>
+                        <span class="label">Críticas:</span> 
+                        <span style="color: #ff4444; font-weight: bold;"><?= $notificacoesCriticas ?></span>
+                    </p>
+                <?php else: ?>
+                    <p><span class="label">Críticas:</span> <span style="color: #44ff44;">0</span></p>
+                <?php endif; ?>
+                <a href="notificacoes/listar.php" class="btn-menu" style="margin-top: 10px; display: inline-block;">
+                    Ver Notificações
+                </a>
             </div>
 
             <!-- Card: Usuários (apenas admin) -->

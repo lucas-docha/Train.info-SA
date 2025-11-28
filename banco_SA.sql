@@ -121,6 +121,36 @@ INSERT INTO trens (tipo_trem, carga_trem, status_trem) VALUES
 ('carga', 'Combustível', 'operante');
 
 -- =====================================================
+-- TABELA: notificacoes
+-- =====================================================
+-- Armazena notificações do sistema
+CREATE TABLE notificacoes (
+    id_notificacao INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    titulo_notificacao VARCHAR(200) NOT NULL,
+    gravidade ENUM('critica', 'alta', 'media', 'baixa') NOT NULL DEFAULT 'media',
+    descricao_notificacao TEXT NOT NULL,
+    assunto ENUM('trens', 'sensores', 'manutencao', 'rotas', 'usuarios') NOT NULL,
+    lida TINYINT(1) DEFAULT 0,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    INDEX idx_gravidade (gravidade),
+    INDEX idx_assunto (assunto),
+    INDEX idx_lida (lida),
+    INDEX idx_criado (criado_em)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- =====================================================
+-- DADOS INICIAIS DE EXEMPLO
+-- =====================================================
+INSERT INTO notificacoes (titulo_notificacao, gravidade, descricao_notificacao, assunto) VALUES
+('Sensor de temperatura alta detectado', 'alta', 'Sensor DHT11 do vagão 3 registrou temperatura de 45°C', 'sensores'),
+('Manutenção preventiva agendada', 'media', 'Trem #4 está agendado para manutenção preventiva na próxima semana', 'manutencao'),
+('Novo usuário cadastrado', 'baixa', 'Usuário João Silva foi cadastrado no sistema', 'usuarios'),
+('Falha crítica no sistema de freios', 'critica', 'Trem #2 apresentou falha no sistema de freios - AÇÃO IMEDIATA NECESSÁRIA', 'trens');
+
+
+
+-- =====================================================
 -- DADOS INICIAIS DE TESTE
 -- =====================================================
 

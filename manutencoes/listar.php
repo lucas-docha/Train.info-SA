@@ -54,6 +54,7 @@ try {
                     <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
                 </div>
             <?php endif; ?>
+            <a href="../dashboard.php" class="botao botao-secundario">← Voltar</a>
         </div>
 
         <div class="card">
@@ -81,9 +82,9 @@ try {
                                 <th>Data Início</th>
                                 <th>Data Término</th>
                                 <th>Comentário</th>
-                                <?php if ($ehAdmin): ?>
+                                
                                 <th>Ações</th>
-                                <?php endif; ?>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -116,6 +117,8 @@ try {
                                            class="btn-tabela btn-excluir"
                                            onclick="return confirm('Excluir esta manutenção?')">Excluir</a>
                                     </div>
+                                    <?php else: ?>
+                                        <span style="color: #6ce5e8;">-</span>
                                     <?php endif; ?>
                                 </td>
                             </tr>
