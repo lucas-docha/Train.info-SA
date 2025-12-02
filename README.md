@@ -28,6 +28,7 @@ PHP, MySQL, HTML, MQTT.
 
 ## Estrutura do repositório  
 Train.info-SA/
+
 ├─ css/ → Arquivos de estilo (visual do site)
 
 ├─ experimental/ → Testes e funcionalidades experimentais
