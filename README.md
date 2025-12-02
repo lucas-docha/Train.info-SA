@@ -29,20 +29,35 @@ PHP, MySQL, HTML, MQTT.
 ## Estrutura do repositório  
 Train.info-SA/
 ├─ css/ → Arquivos de estilo (visual do site)
+
 ├─ experimental/ → Testes e funcionalidades experimentais
+
 ├─ manutencoes/ → CRUD de manutenção de trens
+
 ├─ notificacoes/ → Sistema de notificações
+
 ├─ relatorios/ → Geração de relatórios
+
 ├─ rotas/ → CRUD de rotas e itinerários
+
 ├─ sensores/ → CRUD e leitura de sensores
+
 ├─ trens/ → CRUD de trens
+
 ├─ usuarios/ → Login, cadastro e perfil de usuários
+
 ├─ banco_SA.sql → Script para criar o banco de dados
+
 ├─ config.php → Configurações gerais
+
 ├─ dashboard.php → Tela principal (dashboard)
+
 ├─ index.php → Página inicial
+
 ├─ login.php → Página de login
+
 ├─ logout.php → Página de sair da sessão
+
 └─ sobre.php → Página “Sobre o sistema”
 
 ## Licença  
